@@ -1,0 +1,17 @@
+OS: macOS Apple Silicon
+Python: 3.12.15
+PyTorch: 2.14.1
+Transformers: 4.57.1
+Tokenizers: 0.22.1
+Hugging Face Hub: 0.36.0
+MPS available: True
+
+Compiler:
+Apple Clang 21.0.0
+Target: arm64-apple-darwin27.2.0
+
+Generator:
+Salesforce/codet5-small
+
+Evaluator:
+Qwen/Qwen2.5-Coder-0.5B-Instruct
