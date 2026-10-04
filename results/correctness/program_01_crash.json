@@ -1,0 +1,142 @@
+{
+  "original_source": "data/sample/program_01/original.c",
+  "candidate_source": "data/sample/program_01/candidate.c",
+  "compiler": "clang",
+  "timeout_seconds": 3.0,
+  "tests": [
+    {
+      "name": "positive",
+      "stdin": "10 20\n",
+      "original": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "30\n",
+        "stderr": ""
+      },
+      "candidate": {
+        "timeout": false,
+        "crash": true,
+        "return_code": -11,
+        "stdout": "",
+        "stderr": ""
+      },
+      "comparison": {
+        "passed": false,
+        "same_stdout": false,
+        "same_return_code": false,
+        "original_output": "30",
+        "candidate_output": ""
+      }
+    },
+    {
+      "name": "negative",
+      "stdin": "-5 8\n",
+      "original": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "3\n",
+        "stderr": ""
+      },
+      "candidate": {
+        "timeout": false,
+        "crash": true,
+        "return_code": -11,
+        "stdout": "",
+        "stderr": ""
+      },
+      "comparison": {
+        "passed": false,
+        "same_stdout": false,
+        "same_return_code": false,
+        "original_output": "3",
+        "candidate_output": ""
+      }
+    },
+    {
+      "name": "zero",
+      "stdin": "0 0\n",
+      "original": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "0\n",
+        "stderr": ""
+      },
+      "candidate": {
+        "timeout": false,
+        "crash": true,
+        "return_code": -11,
+        "stdout": "",
+        "stderr": ""
+      },
+      "comparison": {
+        "passed": false,
+        "same_stdout": false,
+        "same_return_code": false,
+        "original_output": "0",
+        "candidate_output": ""
+      }
+    },
+    {
+      "name": "mixed",
+      "stdin": "100 -30\n",
+      "original": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "70\n",
+        "stderr": ""
+      },
+      "candidate": {
+        "timeout": false,
+        "crash": true,
+        "return_code": -11,
+        "stdout": "",
+        "stderr": ""
+      },
+      "comparison": {
+        "passed": false,
+        "same_stdout": false,
+        "same_return_code": false,
+        "original_output": "70",
+        "candidate_output": ""
+      }
+    }
+  ],
+  "original_compile": {
+    "success": true,
+    "return_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "command": [
+      "clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "data/sample/program_01/original.c",
+      "-o",
+      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_yulj21r6/original"
+    ]
+  },
+  "candidate_compile": {
+    "success": true,
+    "return_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "command": [
+      "clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "data/sample/program_01/candidate.c",
+      "-o",
+      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_yulj21r6/candidate"
+    ]
+  },
+  "behavior_equivalent": false,
+  "failure_reason": "CANDIDATE_CRASH"
+}
