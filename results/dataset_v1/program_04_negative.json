@@ -1,0 +1,142 @@
+{
+  "original_source": "data/dataset_v1/program_04/original.c",
+  "candidate_source": "data/dataset_v1/program_04/negative.c",
+  "compiler": "clang",
+  "timeout_seconds": 3.0,
+  "tests": [
+    {
+      "name": "zero",
+      "stdin": "0\n",
+      "original": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "1\n",
+        "stderr": ""
+      },
+      "candidate": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "1\n",
+        "stderr": ""
+      },
+      "comparison": {
+        "passed": true,
+        "same_stdout": true,
+        "same_return_code": true,
+        "original_output": "1",
+        "candidate_output": "1"
+      }
+    },
+    {
+      "name": "one",
+      "stdin": "1\n",
+      "original": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "1\n",
+        "stderr": ""
+      },
+      "candidate": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "1\n",
+        "stderr": ""
+      },
+      "comparison": {
+        "passed": true,
+        "same_stdout": true,
+        "same_return_code": true,
+        "original_output": "1",
+        "candidate_output": "1"
+      }
+    },
+    {
+      "name": "five",
+      "stdin": "5\n",
+      "original": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "120\n",
+        "stderr": ""
+      },
+      "candidate": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "120\n",
+        "stderr": ""
+      },
+      "comparison": {
+        "passed": true,
+        "same_stdout": true,
+        "same_return_code": true,
+        "original_output": "120",
+        "candidate_output": "120"
+      }
+    },
+    {
+      "name": "seven",
+      "stdin": "7\n",
+      "original": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "5040\n",
+        "stderr": ""
+      },
+      "candidate": {
+        "timeout": false,
+        "crash": false,
+        "return_code": 0,
+        "stdout": "5040\n",
+        "stderr": ""
+      },
+      "comparison": {
+        "passed": true,
+        "same_stdout": true,
+        "same_return_code": true,
+        "original_output": "5040",
+        "candidate_output": "5040"
+      }
+    }
+  ],
+  "original_compile": {
+    "success": true,
+    "return_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "command": [
+      "clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "data/dataset_v1/program_04/original.c",
+      "-o",
+      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_e9nb0zvn/original"
+    ]
+  },
+  "candidate_compile": {
+    "success": true,
+    "return_code": 0,
+    "stdout": "",
+    "stderr": "data/dataset_v1/program_04/negative.c:9:9: warning: unused variable 'padding_0' [-Wunused-variable]\n    9 |     int padding_0 = 0;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:10:9: warning: unused variable 'padding_1' [-Wunused-variable]\n   10 |     int padding_1 = 1;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:11:9: warning: unused variable 'padding_2' [-Wunused-variable]\n   11 |     int padding_2 = 2;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:12:9: warning: unused variable 'padding_3' [-Wunused-variable]\n   12 |     int padding_3 = 3;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:13:9: warning: unused variable 'padding_4' [-Wunused-variable]\n   13 |     int padding_4 = 4;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:14:9: warning: unused variable 'padding_5' [-Wunused-variable]\n   14 |     int padding_5 = 5;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:15:9: warning: unused variable 'padding_6' [-Wunused-variable]\n   15 |     int padding_6 = 6;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:16:9: warning: unused variable 'padding_7' [-Wunused-variable]\n   16 |     int padding_7 = 7;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:17:9: warning: unused variable 'padding_8' [-Wunused-variable]\n   17 |     int padding_8 = 8;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:18:9: warning: unused variable 'padding_9' [-Wunused-variable]\n   18 |     int padding_9 = 9;\n      |         ^~~~~~~~~\ndata/dataset_v1/program_04/negative.c:19:9: warning: unused variable 'padding_10' [-Wunused-variable]\n   19 |     int padding_10 = 10;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:20:9: warning: unused variable 'padding_11' [-Wunused-variable]\n   20 |     int padding_11 = 11;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:21:9: warning: unused variable 'padding_12' [-Wunused-variable]\n   21 |     int padding_12 = 12;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:22:9: warning: unused variable 'padding_13' [-Wunused-variable]\n   22 |     int padding_13 = 13;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:23:9: warning: unused variable 'padding_14' [-Wunused-variable]\n   23 |     int padding_14 = 14;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:24:9: warning: unused variable 'padding_15' [-Wunused-variable]\n   24 |     int padding_15 = 15;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:25:9: warning: unused variable 'padding_16' [-Wunused-variable]\n   25 |     int padding_16 = 16;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:26:9: warning: unused variable 'padding_17' [-Wunused-variable]\n   26 |     int padding_17 = 17;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:27:9: warning: unused variable 'padding_18' [-Wunused-variable]\n   27 |     int padding_18 = 18;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:28:9: warning: unused variable 'padding_19' [-Wunused-variable]\n   28 |     int padding_19 = 19;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:29:9: warning: unused variable 'padding_20' [-Wunused-variable]\n   29 |     int padding_20 = 20;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:30:9: warning: unused variable 'padding_21' [-Wunused-variable]\n   30 |     int padding_21 = 21;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:31:9: warning: unused variable 'padding_22' [-Wunused-variable]\n   31 |     int padding_22 = 22;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:32:9: warning: unused variable 'padding_23' [-Wunused-variable]\n   32 |     int padding_23 = 23;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:33:9: warning: unused variable 'padding_24' [-Wunused-variable]\n   33 |     int padding_24 = 24;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:34:9: warning: unused variable 'padding_25' [-Wunused-variable]\n   34 |     int padding_25 = 25;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:35:9: warning: unused variable 'padding_26' [-Wunused-variable]\n   35 |     int padding_26 = 26;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:36:9: warning: unused variable 'padding_27' [-Wunused-variable]\n   36 |     int padding_27 = 27;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:37:9: warning: unused variable 'padding_28' [-Wunused-variable]\n   37 |     int padding_28 = 28;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:38:9: warning: unused variable 'padding_29' [-Wunused-variable]\n   38 |     int padding_29 = 29;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:39:9: warning: unused variable 'padding_30' [-Wunused-variable]\n   39 |     int padding_30 = 30;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:40:9: warning: unused variable 'padding_31' [-Wunused-variable]\n   40 |     int padding_31 = 31;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:41:9: warning: unused variable 'padding_32' [-Wunused-variable]\n   41 |     int padding_32 = 32;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:42:9: warning: unused variable 'padding_33' [-Wunused-variable]\n   42 |     int padding_33 = 33;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:43:9: warning: unused variable 'padding_34' [-Wunused-variable]\n   43 |     int padding_34 = 34;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:44:9: warning: unused variable 'padding_35' [-Wunused-variable]\n   44 |     int padding_35 = 35;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:45:9: warning: unused variable 'padding_36' [-Wunused-variable]\n   45 |     int padding_36 = 36;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:46:9: warning: unused variable 'padding_37' [-Wunused-variable]\n   46 |     int padding_37 = 37;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:47:9: warning: unused variable 'padding_38' [-Wunused-variable]\n   47 |     int padding_38 = 38;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:48:9: warning: unused variable 'padding_39' [-Wunused-variable]\n   48 |     int padding_39 = 39;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:49:9: warning: unused variable 'padding_40' [-Wunused-variable]\n   49 |     int padding_40 = 40;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:50:9: warning: unused variable 'padding_41' [-Wunused-variable]\n   50 |     int padding_41 = 41;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:51:9: warning: unused variable 'padding_42' [-Wunused-variable]\n   51 |     int padding_42 = 42;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:52:9: warning: unused variable 'padding_43' [-Wunused-variable]\n   52 |     int padding_43 = 43;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:53:9: warning: unused variable 'padding_44' [-Wunused-variable]\n   53 |     int padding_44 = 44;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:54:9: warning: unused variable 'padding_45' [-Wunused-variable]\n   54 |     int padding_45 = 45;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:55:9: warning: unused variable 'padding_46' [-Wunused-variable]\n   55 |     int padding_46 = 46;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:56:9: warning: unused variable 'padding_47' [-Wunused-variable]\n   56 |     int padding_47 = 47;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:57:9: warning: unused variable 'padding_48' [-Wunused-variable]\n   57 |     int padding_48 = 48;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:58:9: warning: unused variable 'padding_49' [-Wunused-variable]\n   58 |     int padding_49 = 49;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:59:9: warning: unused variable 'padding_50' [-Wunused-variable]\n   59 |     int padding_50 = 50;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:60:9: warning: unused variable 'padding_51' [-Wunused-variable]\n   60 |     int padding_51 = 51;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:61:9: warning: unused variable 'padding_52' [-Wunused-variable]\n   61 |     int padding_52 = 52;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:62:9: warning: unused variable 'padding_53' [-Wunused-variable]\n   62 |     int padding_53 = 53;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:63:9: warning: unused variable 'padding_54' [-Wunused-variable]\n   63 |     int padding_54 = 54;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:64:9: warning: unused variable 'padding_55' [-Wunused-variable]\n   64 |     int padding_55 = 55;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:65:9: warning: unused variable 'padding_56' [-Wunused-variable]\n   65 |     int padding_56 = 56;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:66:9: warning: unused variable 'padding_57' [-Wunused-variable]\n   66 |     int padding_57 = 57;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:67:9: warning: unused variable 'padding_58' [-Wunused-variable]\n   67 |     int padding_58 = 58;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:68:9: warning: unused variable 'padding_59' [-Wunused-variable]\n   68 |     int padding_59 = 59;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:69:9: warning: unused variable 'padding_60' [-Wunused-variable]\n   69 |     int padding_60 = 60;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:70:9: warning: unused variable 'padding_61' [-Wunused-variable]\n   70 |     int padding_61 = 61;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:71:9: warning: unused variable 'padding_62' [-Wunused-variable]\n   71 |     int padding_62 = 62;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:72:9: warning: unused variable 'padding_63' [-Wunused-variable]\n   72 |     int padding_63 = 63;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:73:9: warning: unused variable 'padding_64' [-Wunused-variable]\n   73 |     int padding_64 = 64;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:74:9: warning: unused variable 'padding_65' [-Wunused-variable]\n   74 |     int padding_65 = 65;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:75:9: warning: unused variable 'padding_66' [-Wunused-variable]\n   75 |     int padding_66 = 66;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:76:9: warning: unused variable 'padding_67' [-Wunused-variable]\n   76 |     int padding_67 = 67;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:77:9: warning: unused variable 'padding_68' [-Wunused-variable]\n   77 |     int padding_68 = 68;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:78:9: warning: unused variable 'padding_69' [-Wunused-variable]\n   78 |     int padding_69 = 69;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:79:9: warning: unused variable 'padding_70' [-Wunused-variable]\n   79 |     int padding_70 = 70;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:80:9: warning: unused variable 'padding_71' [-Wunused-variable]\n   80 |     int padding_71 = 71;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:81:9: warning: unused variable 'padding_72' [-Wunused-variable]\n   81 |     int padding_72 = 72;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:82:9: warning: unused variable 'padding_73' [-Wunused-variable]\n   82 |     int padding_73 = 73;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:83:9: warning: unused variable 'padding_74' [-Wunused-variable]\n   83 |     int padding_74 = 74;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:84:9: warning: unused variable 'padding_75' [-Wunused-variable]\n   84 |     int padding_75 = 75;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:85:9: warning: unused variable 'padding_76' [-Wunused-variable]\n   85 |     int padding_76 = 76;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:86:9: warning: unused variable 'padding_77' [-Wunused-variable]\n   86 |     int padding_77 = 77;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:87:9: warning: unused variable 'padding_78' [-Wunused-variable]\n   87 |     int padding_78 = 78;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:88:9: warning: unused variable 'padding_79' [-Wunused-variable]\n   88 |     int padding_79 = 79;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:89:9: warning: unused variable 'padding_80' [-Wunused-variable]\n   89 |     int padding_80 = 80;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:90:9: warning: unused variable 'padding_81' [-Wunused-variable]\n   90 |     int padding_81 = 81;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:91:9: warning: unused variable 'padding_82' [-Wunused-variable]\n   91 |     int padding_82 = 82;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:92:9: warning: unused variable 'padding_83' [-Wunused-variable]\n   92 |     int padding_83 = 83;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:93:9: warning: unused variable 'padding_84' [-Wunused-variable]\n   93 |     int padding_84 = 84;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:94:9: warning: unused variable 'padding_85' [-Wunused-variable]\n   94 |     int padding_85 = 85;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:95:9: warning: unused variable 'padding_86' [-Wunused-variable]\n   95 |     int padding_86 = 86;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:96:9: warning: unused variable 'padding_87' [-Wunused-variable]\n   96 |     int padding_87 = 87;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:97:9: warning: unused variable 'padding_88' [-Wunused-variable]\n   97 |     int padding_88 = 88;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:98:9: warning: unused variable 'padding_89' [-Wunused-variable]\n   98 |     int padding_89 = 89;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:99:9: warning: unused variable 'padding_90' [-Wunused-variable]\n   99 |     int padding_90 = 90;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:100:9: warning: unused variable 'padding_91' [-Wunused-variable]\n  100 |     int padding_91 = 91;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:101:9: warning: unused variable 'padding_92' [-Wunused-variable]\n  101 |     int padding_92 = 92;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:102:9: warning: unused variable 'padding_93' [-Wunused-variable]\n  102 |     int padding_93 = 93;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:103:9: warning: unused variable 'padding_94' [-Wunused-variable]\n  103 |     int padding_94 = 94;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:104:9: warning: unused variable 'padding_95' [-Wunused-variable]\n  104 |     int padding_95 = 95;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:105:9: warning: unused variable 'padding_96' [-Wunused-variable]\n  105 |     int padding_96 = 96;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:106:9: warning: unused variable 'padding_97' [-Wunused-variable]\n  106 |     int padding_97 = 97;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:107:9: warning: unused variable 'padding_98' [-Wunused-variable]\n  107 |     int padding_98 = 98;\n      |         ^~~~~~~~~~\ndata/dataset_v1/program_04/negative.c:108:9: warning: unused variable 'padding_99' [-Wunused-variable]\n  108 |     int padding_99 = 99;\n      |         ^~~~~~~~~~\n100 warnings generated.\n",
+    "command": [
+      "clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "data/dataset_v1/program_04/negative.c",
+      "-o",
+      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_e9nb0zvn/candidate"
+    ]
+  },
+  "behavior_equivalent": true,
+  "failure_reason": null
+}
