@@ -1,0 +1,48 @@
+{
+  "spec_id": "SPEC_V1",
+  "language": "C",
+  "standard": "C11",
+  "compiler_flags": [
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic"
+  ],
+  "required_transformations": [
+    "identifier_transformation",
+    "control_flow_transformation",
+    "expression_transformation"
+  ],
+  "forbidden_transformations": [
+    "public_api_change",
+    "input_output_semantics_change",
+    "undefined_behavior_introduction",
+    "function_signature_change",
+    "return_value_change"
+  ],
+  "limits": {
+    "max_code_growth_ratio": 2.0,
+    "max_runtime_overhead_ratio": 1.5,
+    "max_retries": 3
+  },
+  "preserve": [
+    "function_signature",
+    "program_outputs",
+    "return_values"
+  ],
+  "signature_goal": {
+    "identifier_overlap": "reduce",
+    "token_similarity": "reduce",
+    "ast_similarity": "reduce",
+    "control_flow_similarity": "reduce",
+    "source_similarity": "reduce"
+  },
+  "acceptance_policy": {
+    "compile_ok": true,
+    "behavior_ok": true,
+    "required_rules_satisfied": true,
+    "forbidden_rules_violated": false,
+    "signature_goal_satisfied": true,
+    "within_limits": true
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "original_source": "data/dataset_v1/program_02/original.c",
+  "candidate_source": "data/dataset_v1/program_02/negative.c",
+  "compiler": "clang",
+  "timeout_seconds": 3.0,
+  "tests": [],
+  "original_compile": {
+    "success": true,
+    "return_code": 0,
+    "stdout": "",
+    "stderr": "",
+    "command": [
+      "clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "data/dataset_v1/program_02/original.c",
+      "-o",
+      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_i19zx87i/original"
+    ]
+  },
+  "candidate_compile": {
+    "success": false,
+    "return_code": 1,
+    "stdout": "",
+    "stderr": "data/dataset_v1/program_02/negative.c:5:15: error: expected ';' at end of declaration\n    5 |     int bigger\n      |               ^\n      |               ;\n1 error generated.\n",
+    "command": [
+      "clang",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "data/dataset_v1/program_02/negative.c",
+      "-o",
+      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_i19zx87i/candidate"
+    ]
+  },
+  "behavior_equivalent": false,
+  "failure_reason": "CANDIDATE_COMPILE_FAILURE"
+}

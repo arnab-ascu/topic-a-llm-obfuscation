@@ -1,0 +1,102 @@
+[
+  {
+    "program_id": "program_01",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "FULL_V1",
+    "record_type": "positive",
+    "original_path": "data/dataset_v1/program_01/original.c",
+    "candidate_path": "data/dataset_v1/program_01/positive.c",
+    "correctness_status": null,
+    "behavior_ok": true
+  },
+  {
+    "program_id": "program_01",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "NEGATIVE_BEHAVIOR",
+    "record_type": "negative",
+    "original_path": "data/dataset_v1/program_01/original.c",
+    "candidate_path": "data/dataset_v1/program_01/negative.c",
+    "correctness_status": "BEHAVIOR_MISMATCH",
+    "behavior_ok": false
+  },
+  {
+    "program_id": "program_02",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "FULL_V1",
+    "record_type": "positive",
+    "original_path": "data/dataset_v1/program_02/original.c",
+    "candidate_path": "data/dataset_v1/program_02/positive.c",
+    "correctness_status": null,
+    "behavior_ok": true
+  },
+  {
+    "program_id": "program_02",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "NEGATIVE_COMPILE",
+    "record_type": "negative",
+    "original_path": "data/dataset_v1/program_02/original.c",
+    "candidate_path": "data/dataset_v1/program_02/negative.c",
+    "correctness_status": "CANDIDATE_COMPILE_FAILURE",
+    "behavior_ok": false
+  },
+  {
+    "program_id": "program_03",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "FULL_V1",
+    "record_type": "positive",
+    "original_path": "data/dataset_v1/program_03/original.c",
+    "candidate_path": "data/dataset_v1/program_03/positive.c",
+    "correctness_status": null,
+    "behavior_ok": true
+  },
+  {
+    "program_id": "program_03",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "NEGATIVE_NO_OP",
+    "record_type": "negative",
+    "original_path": "data/dataset_v1/program_03/original.c",
+    "candidate_path": "data/dataset_v1/program_03/negative.c",
+    "correctness_status": null,
+    "behavior_ok": true
+  },
+  {
+    "program_id": "program_04",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "FULL_V1",
+    "record_type": "positive",
+    "original_path": "data/dataset_v1/program_04/original.c",
+    "candidate_path": "data/dataset_v1/program_04/positive.c",
+    "correctness_status": null,
+    "behavior_ok": true
+  },
+  {
+    "program_id": "program_04",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "NEGATIVE_BLOAT",
+    "record_type": "negative",
+    "original_path": "data/dataset_v1/program_04/original.c",
+    "candidate_path": "data/dataset_v1/program_04/negative.c",
+    "correctness_status": null,
+    "behavior_ok": true
+  },
+  {
+    "program_id": "program_05",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "FULL_V1",
+    "record_type": "positive",
+    "original_path": "data/dataset_v1/program_05/original.c",
+    "candidate_path": "data/dataset_v1/program_05/positive.c",
+    "correctness_status": null,
+    "behavior_ok": true
+  },
+  {
+    "program_id": "program_05",
+    "spec_id": "SPEC_V1",
+    "transformation_id": "NEGATIVE_SIGNATURE",
+    "record_type": "negative",
+    "original_path": "data/dataset_v1/program_05/original.c",
+    "candidate_path": "data/dataset_v1/program_05/negative.c",
+    "correctness_status": null,
+    "behavior_ok": true
+  }
+]

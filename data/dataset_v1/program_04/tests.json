@@ -1,0 +1,18 @@
+[
+  {
+    "name": "zero",
+    "stdin": "0\n"
+  },
+  {
+    "name": "one",
+    "stdin": "1\n"
+  },
+  {
+    "name": "five",
+    "stdin": "5\n"
+  },
+  {
+    "name": "seven",
+    "stdin": "7\n"
+  }
+]
