@@ -1,7 +1,7 @@
 {
-  "original_source": "data/dataset_v1/program_03/original.c",
-  "candidate_source": "data/dataset_v1/program_03/negative.c",
-  "compiler": "clang",
+  "original_source": "data\\dataset_v1\\program_03\\original.c",
+  "candidate_source": "data\\dataset_v1\\program_03\\negative.c",
+  "compiler": "gcc",
   "timeout_seconds": 3.0,
   "tests": [
     {
@@ -136,14 +136,14 @@
     "stdout": "",
     "stderr": "",
     "command": [
-      "clang",
+      "gcc",
       "-std=c11",
       "-Wall",
       "-Wextra",
       "-Wpedantic",
-      "data/dataset_v1/program_03/original.c",
+      "data\\dataset_v1\\program_03\\original.c",
       "-o",
-      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_6o6tkanm/original"
+      "C:\\Users\\ANIK\\AppData\\Local\\Temp\\obfuscation_test_2bmqx4de\\original"
     ]
   },
   "candidate_compile": {
@@ -152,14 +152,14 @@
     "stdout": "",
     "stderr": "",
     "command": [
-      "clang",
+      "gcc",
       "-std=c11",
       "-Wall",
       "-Wextra",
       "-Wpedantic",
-      "data/dataset_v1/program_03/negative.c",
+      "data\\dataset_v1\\program_03\\negative.c",
       "-o",
-      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_6o6tkanm/candidate"
+      "C:\\Users\\ANIK\\AppData\\Local\\Temp\\obfuscation_test_2bmqx4de\\candidate"
     ]
   },
   "behavior_equivalent": true,

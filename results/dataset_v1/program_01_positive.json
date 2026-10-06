@@ -1,7 +1,7 @@
 {
-  "original_source": "data/dataset_v1/program_01/original.c",
-  "candidate_source": "data/dataset_v1/program_01/positive.c",
-  "compiler": "clang",
+  "original_source": "data\\dataset_v1\\program_01\\original.c",
+  "candidate_source": "data\\dataset_v1\\program_01\\positive.c",
+  "compiler": "gcc",
   "timeout_seconds": 3.0,
   "tests": [
     {
@@ -111,30 +111,30 @@
     "stdout": "",
     "stderr": "",
     "command": [
-      "clang",
+      "gcc",
       "-std=c11",
       "-Wall",
       "-Wextra",
       "-Wpedantic",
-      "data/dataset_v1/program_01/original.c",
+      "data\\dataset_v1\\program_01\\original.c",
       "-o",
-      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_sjqf9kxj/original"
+      "C:\\Users\\ANIK\\AppData\\Local\\Temp\\obfuscation_test_5k71qmci\\original"
     ]
   },
   "candidate_compile": {
     "success": true,
     "return_code": 0,
     "stdout": "",
-    "stderr": "",
+    "stderr": "data\\dataset_v1\\program_01\\positive.c: In function 'main':\ndata\\dataset_v1\\program_01\\positive.c:6:21: warning: self-comparison always evaluates to true [-Wtautological-compare]\n     if ((lhs | rhs) == (lhs | rhs)) {\n                     ^~\n",
     "command": [
-      "clang",
+      "gcc",
       "-std=c11",
       "-Wall",
       "-Wextra",
       "-Wpedantic",
-      "data/dataset_v1/program_01/positive.c",
+      "data\\dataset_v1\\program_01\\positive.c",
       "-o",
-      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_sjqf9kxj/candidate"
+      "C:\\Users\\ANIK\\AppData\\Local\\Temp\\obfuscation_test_5k71qmci\\candidate"
     ]
   },
   "behavior_equivalent": true,

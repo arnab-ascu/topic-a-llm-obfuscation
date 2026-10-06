@@ -1,7 +1,7 @@
 {
-  "original_source": "data/dataset_v1/program_02/original.c",
-  "candidate_source": "data/dataset_v1/program_02/negative.c",
-  "compiler": "clang",
+  "original_source": "data\\dataset_v1\\program_02\\original.c",
+  "candidate_source": "data\\dataset_v1\\program_02\\negative.c",
+  "compiler": "gcc",
   "timeout_seconds": 3.0,
   "tests": [],
   "original_compile": {
@@ -10,30 +10,30 @@
     "stdout": "",
     "stderr": "",
     "command": [
-      "clang",
+      "gcc",
       "-std=c11",
       "-Wall",
       "-Wextra",
       "-Wpedantic",
-      "data/dataset_v1/program_02/original.c",
+      "data\\dataset_v1\\program_02\\original.c",
       "-o",
-      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_i19zx87i/original"
+      "C:\\Users\\ANIK\\AppData\\Local\\Temp\\obfuscation_test_sz7cwyv5\\original"
     ]
   },
   "candidate_compile": {
     "success": false,
     "return_code": 1,
     "stdout": "",
-    "stderr": "data/dataset_v1/program_02/negative.c:5:15: error: expected ';' at end of declaration\n    5 |     int bigger\n      |               ^\n      |               ;\n1 error generated.\n",
+    "stderr": "data\\dataset_v1\\program_02\\negative.c: In function 'main':\ndata\\dataset_v1\\program_02\\negative.c:5:5: warning: ISO C forbids nested functions [-Wpedantic]\n     int bigger\n     ^~~\ndata\\dataset_v1\\program_02\\negative.c:6:5: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'printf'\n     printf(\"%d\\n\", bigger);\n     ^~~~~~\ndata\\dataset_v1\\program_02\\negative.c:6:20: error: 'bigger' undeclared (first use in this function)\n     printf(\"%d\\n\", bigger);\n                    ^~~~~~\ndata\\dataset_v1\\program_02\\negative.c:6:20: note: each undeclared identifier is reported only once for each function it appears in\n",
     "command": [
-      "clang",
+      "gcc",
       "-std=c11",
       "-Wall",
       "-Wextra",
       "-Wpedantic",
-      "data/dataset_v1/program_02/negative.c",
+      "data\\dataset_v1\\program_02\\negative.c",
       "-o",
-      "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/obfuscation_test_i19zx87i/candidate"
+      "C:\\Users\\ANIK\\AppData\\Local\\Temp\\obfuscation_test_sz7cwyv5\\candidate"
     ]
   },
   "behavior_equivalent": false,
