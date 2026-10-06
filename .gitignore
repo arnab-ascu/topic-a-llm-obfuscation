@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # Python virtual environments
 .venv/
 venv/
@@ -16,3 +17,12 @@ models/checkpoints/
 # VS Code / IDE
 .vscode/
 .idea/
+=======
+
+data/sample/hello.exe
+models/
+
+data/sample/hello.exe
+models/
+
+>>>>>>> Stashed changes
