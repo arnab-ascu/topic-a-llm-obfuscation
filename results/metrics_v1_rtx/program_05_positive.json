@@ -1,0 +1,205 @@
+{
+  "program_id": "program_05",
+  "spec_id": "SPEC_V1",
+  "attempt_id": 1,
+  "original_path": "data\\dataset_v1\\program_05\\original.c",
+  "obfuscated_path": "data\\dataset_v1\\program_05\\positive.c",
+  "raw_metrics_original": {
+    "size": {
+      "source_lines": 13,
+      "nonempty_source_lines": 13,
+      "source_tokens": 73,
+      "nloc": 13,
+      "token_count": 66,
+      "function_count": 1,
+      "total_cyclomatic_complexity": 2,
+      "max_cyclomatic_complexity": 2,
+      "average_cyclomatic_complexity": 2.0
+    },
+    "halstead": {
+      "operator_count": 42,
+      "operand_count": 16,
+      "distinct_operators": 15,
+      "distinct_operands": 7,
+      "vocabulary": 22,
+      "length": 58,
+      "volume": 258.64703388096325,
+      "difficulty": 17.142857142857142,
+      "effort": 4433.949152245084
+    },
+    "nesting": {
+      "control_construct_count": 1,
+      "max_control_nesting": 1,
+      "average_control_nesting": 1.0
+    },
+    "runtime": {
+      "median_seconds": 0.017494850035291165
+    }
+  },
+  "raw_metrics_obfuscated": {
+    "size": {
+      "source_lines": 15,
+      "nonempty_source_lines": 15,
+      "source_tokens": 79,
+      "nloc": 15,
+      "token_count": 72,
+      "function_count": 1,
+      "total_cyclomatic_complexity": 2,
+      "max_cyclomatic_complexity": 2,
+      "average_cyclomatic_complexity": 2.0
+    },
+    "halstead": {
+      "operator_count": 46,
+      "operand_count": 17,
+      "distinct_operators": 16,
+      "distinct_operands": 7,
+      "vocabulary": 23,
+      "length": 63,
+      "volume": 284.98440323159184,
+      "difficulty": 19.428571428571427,
+      "effort": 5536.839834213784
+    },
+    "nesting": {
+      "control_construct_count": 1,
+      "max_control_nesting": 1,
+      "average_control_nesting": 1.0
+    },
+    "runtime": {
+      "median_seconds": 0.01873169996542856
+    }
+  },
+  "metric_changes": {
+    "runtime.median_seconds": {
+      "delta": 0.0012368499301373959,
+      "relative_change": 0.07069794411740501,
+      "ratio": 1.070697944117405
+    },
+    "halstead.effort": {
+      "delta": 1102.8906819687,
+      "relative_change": 0.248737782978468,
+      "ratio": 1.248737782978468
+    },
+    "halstead.volume": {
+      "delta": 26.33736935062859,
+      "relative_change": 0.10182745556923649,
+      "ratio": 1.1018274555692364
+    },
+    "halstead.difficulty": {
+      "delta": 2.2857142857142847,
+      "relative_change": 0.13333333333333328,
+      "ratio": 1.1333333333333333
+    },
+    "halstead.operand_count": {
+      "delta": 1,
+      "relative_change": 0.0625,
+      "ratio": 1.0625
+    },
+    "halstead.operator_count": {
+      "delta": 4,
+      "relative_change": 0.09523809523809523,
+      "ratio": 1.0952380952380953
+    },
+    "halstead.vocabulary": {
+      "delta": 1,
+      "relative_change": 0.045454545454545456,
+      "ratio": 1.0454545454545454
+    },
+    "halstead.length": {
+      "delta": 5,
+      "relative_change": 0.08620689655172414,
+      "ratio": 1.0862068965517242
+    },
+    "halstead.distinct_operands": {
+      "delta": 0,
+      "relative_change": 0.0,
+      "ratio": 1.0
+    },
+    "halstead.distinct_operators": {
+      "delta": 1,
+      "relative_change": 0.06666666666666667,
+      "ratio": 1.0666666666666667
+    },
+    "size.max_cyclomatic_complexity": {
+      "delta": 0,
+      "relative_change": 0.0,
+      "ratio": 1.0
+    },
+    "size.nloc": {
+      "delta": 2,
+      "relative_change": 0.15384615384615385,
+      "ratio": 1.1538461538461537
+    },
+    "size.nonempty_source_lines": {
+      "delta": 2,
+      "relative_change": 0.15384615384615385,
+      "ratio": 1.1538461538461537
+    },
+    "size.token_count": {
+      "delta": 6,
+      "relative_change": 0.09090909090909091,
+      "ratio": 1.0909090909090908
+    },
+    "size.source_tokens": {
+      "delta": 6,
+      "relative_change": 0.0821917808219178,
+      "ratio": 1.082191780821918
+    },
+    "size.source_lines": {
+      "delta": 2,
+      "relative_change": 0.15384615384615385,
+      "ratio": 1.1538461538461537
+    },
+    "size.function_count": {
+      "delta": 0,
+      "relative_change": 0.0,
+      "ratio": 1.0
+    },
+    "size.total_cyclomatic_complexity": {
+      "delta": 0,
+      "relative_change": 0.0,
+      "ratio": 1.0
+    },
+    "size.average_cyclomatic_complexity": {
+      "delta": 0.0,
+      "relative_change": 0.0,
+      "ratio": 1.0
+    },
+    "nesting.average_control_nesting": {
+      "delta": 0.0,
+      "relative_change": 0.0,
+      "ratio": 1.0
+    },
+    "nesting.control_construct_count": {
+      "delta": 0,
+      "relative_change": 0.0,
+      "ratio": 1.0
+    },
+    "nesting.max_control_nesting": {
+      "delta": 0,
+      "relative_change": 0.0,
+      "ratio": 1.0
+    }
+  },
+  "runtime_overhead_ratio": 1.070697944117405,
+  "signature_results": {
+    "identifier_overlap": 0.2727272727272727,
+    "identifier_renaming_ratio": 0.7272727272727273,
+    "token_ngram_overlap": 0.23809523809523808,
+    "ast_similarity": 0.9872393843707662,
+    "control_flow_similarity": 0.0,
+    "normalized_source_similarity": 0.4803921568627451,
+    "distinctive_substring_overlap": 0.06017191977077364
+  },
+  "specification_flags": {
+    "identifier_transformation_observed": true,
+    "control_flow_transformation_observed": true,
+    "expression_transformation_observed": true,
+    "code_growth_ratio": 1.1538461538461537,
+    "code_growth_within_limit": true
+  },
+  "signature_goal_calibrated": false,
+  "runtime_limit": {
+    "max_runtime_overhead_ratio": 1.5,
+    "within_limit": true
+  }
+}
