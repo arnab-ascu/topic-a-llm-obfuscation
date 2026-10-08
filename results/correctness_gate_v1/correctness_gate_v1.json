@@ -1,0 +1,78 @@
+{
+  "gate": "CORRECTNESS_V1",
+  "program_count": 5,
+  "record_count": 10,
+  "records": [
+    {
+      "program_id": "program_01",
+      "record_type": "positive",
+      "behavior_ok": true,
+      "failure_reason": null,
+      "accepted_by_correctness_gate": true
+    },
+    {
+      "program_id": "program_01",
+      "record_type": "negative",
+      "behavior_ok": false,
+      "failure_reason": "BEHAVIOR_MISMATCH",
+      "accepted_by_correctness_gate": false
+    },
+    {
+      "program_id": "program_02",
+      "record_type": "positive",
+      "behavior_ok": true,
+      "failure_reason": null,
+      "accepted_by_correctness_gate": true
+    },
+    {
+      "program_id": "program_02",
+      "record_type": "negative",
+      "behavior_ok": false,
+      "failure_reason": "CANDIDATE_COMPILE_FAILURE",
+      "accepted_by_correctness_gate": false
+    },
+    {
+      "program_id": "program_03",
+      "record_type": "positive",
+      "behavior_ok": true,
+      "failure_reason": null,
+      "accepted_by_correctness_gate": true
+    },
+    {
+      "program_id": "program_03",
+      "record_type": "negative",
+      "behavior_ok": true,
+      "failure_reason": null,
+      "accepted_by_correctness_gate": false
+    },
+    {
+      "program_id": "program_04",
+      "record_type": "positive",
+      "behavior_ok": true,
+      "failure_reason": null,
+      "accepted_by_correctness_gate": true
+    },
+    {
+      "program_id": "program_04",
+      "record_type": "negative",
+      "behavior_ok": true,
+      "failure_reason": null,
+      "accepted_by_correctness_gate": false
+    },
+    {
+      "program_id": "program_05",
+      "record_type": "positive",
+      "behavior_ok": true,
+      "failure_reason": null,
+      "accepted_by_correctness_gate": true
+    },
+    {
+      "program_id": "program_05",
+      "record_type": "negative",
+      "behavior_ok": true,
+      "failure_reason": null,
+      "accepted_by_correctness_gate": false
+    }
+  ],
+  "positive_pass_count": 5
+}
