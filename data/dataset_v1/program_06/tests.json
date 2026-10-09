@@ -1,0 +1,18 @@
+[
+  {
+    "name": "empty",
+    "stdin": "0\n"
+  },
+  {
+    "name": "positive_values",
+    "stdin": "3\n1 2 3\n"
+  },
+  {
+    "name": "mixed_values",
+    "stdin": "4\n-1 0 2 5\n"
+  },
+  {
+    "name": "single_value",
+    "stdin": "1\n9\n"
+  }
+]
