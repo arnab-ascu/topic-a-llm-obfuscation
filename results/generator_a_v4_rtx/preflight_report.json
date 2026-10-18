@@ -1,0 +1,91 @@
+{
+  "created_at_utc": "2026-10-18T15:54:59.287492+00:00",
+  "purpose": "expanded_validated_loop_transformation_training_v3",
+  "generalization_claim_allowed": false,
+  "dataset_counts": {
+    "train": 9,
+    "validation": 1,
+    "test": 1
+  },
+  "dataset_sha256": {
+    "train": "d20c38bdd033ec0895f09e8f9c4f49ca612772ffc83ef4d4f9e507707c1f7e39",
+    "validation": "5e98ce7fa8e31debd50a04404a398bd2ba019560da758f2e3295d3500e6ab188",
+    "test": "987aed23b2e1d791d8c13261848866af56e6e9174ca41dd8d478f4452353ce58"
+  },
+  "config_sha256": "17bd0bd5bc6646b42a7d5955ffeb5395b8d75f7b122b2ff1cb03aa2feeaa221c",
+  "specification_sha256": "0cbfa547ed6c56cfd40da5bb05200aa0e2b79115041815f3363574603205301d",
+  "model_path": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\models\\base\\codet5-small",
+  "git_commit": "7183167d578dee4fdf15954a630badc9509bda69",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "torch_version": "2.14.1+cu126",
+  "transformers_version": "4.57.1",
+  "peft_version": "0.21.2",
+  "accelerate_version": "1.15.0",
+  "prompt_strategy": "compact task instruction + original C source extracted from input_text",
+  "lora_config": {
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "q",
+      "k",
+      "v",
+      "o",
+      "wi",
+      "wo"
+    ]
+  },
+  "selected_device": "cuda",
+  "device_name": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+  "cuda_available": true,
+  "mps_available": false,
+  "token_length_report": {
+    "train": {
+      "source_token_lengths": [
+        129,
+        154,
+        139,
+        188,
+        196,
+        217,
+        131,
+        109,
+        113
+      ],
+      "target_token_lengths": [
+        109,
+        114,
+        79,
+        127,
+        140,
+        160,
+        67,
+        47,
+        46
+      ]
+    },
+    "validation": {
+      "source_token_lengths": [
+        155
+      ],
+      "target_token_lengths": [
+        92
+      ]
+    },
+    "test": {
+      "source_token_lengths": [
+        168
+      ],
+      "target_token_lengths": [
+        107
+      ]
+    }
+  },
+  "status": "PREFLIGHT_PASSED",
+  "notes": [
+    "Validated compact prompts and untruncated targets.",
+    "Validation/test are never used for gradient updates.",
+    "Only three training examples are available; no generalization claim is valid."
+  ]
+}

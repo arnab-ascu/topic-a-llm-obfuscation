@@ -1,0 +1,293 @@
+{
+  "status": "EVALUATION_COMPLETED",
+  "split": "validation",
+  "num_examples": 1,
+  "device": {
+    "selected_device": "cuda",
+    "device_name": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "cuda_available": true,
+    "mps_available": false
+  },
+  "base_model": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\models\\base\\codet5-small",
+  "adapter_path": "models\\checkpoints\\generator_a_lora_v4_rtx\\final_adapter",
+  "purpose": "expanded_validated_loop_transformation_training_v3",
+  "generalization_claim_allowed": false,
+  "generation_config": {
+    "max_new_tokens": 192,
+    "do_sample": false,
+    "num_beams": 8,
+    "num_return_sequences": 4,
+    "no_repeat_ngram_size": 4,
+    "repetition_penalty": 1.1
+  },
+  "results": [
+    {
+      "split": "validation",
+      "program_id": "program_04",
+      "original_path": "data\\dataset_v1\\program_04\\original.c",
+      "candidate_path": "results\\generator_a_v4_rtx\\candidates\\program_04_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_01.c:8:9: error: 'result' undeclared (first use in this function)\n         result = result * positive_count;\n         ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_01.c:8:9: note: each undeclared identifier is reported only once for each function it appears in\n",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_aaxopwh0\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.5833333333333334,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 62,
+        "candidate_token_count": 62,
+        "code_growth_ratio": 1.0,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": false
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Compilation failed or original/tests unavailable",
+        "passed_cases": 0,
+        "total_cases": 0
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_01.c:8:9: error: 'result' undeclared (first use in this function)\n         result = result * positive_count;\n         ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_01.c:8:9: note: each undeclared identifier is reported only once for each function it appears in\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_aaxopwh0\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5833333333333334,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 62,
+            "candidate_token_count": 62,
+            "code_growth_ratio": 1.0,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_02.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_02.c:8:9: error: 'result' undeclared (first use in this function)\n         result = result * positive_count;\n         ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_02.c:8:9: note: each undeclared identifier is reported only once for each function it appears in\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_aaxopwh0\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5833333333333334,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 62,
+            "candidate_token_count": 62,
+            "code_growth_ratio": 1.0,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_03.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_03.c:8:9: error: 'result' undeclared (first use in this function)\n         result = result * positive_count;\n         ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_03.c:8:9: note: each undeclared identifier is reported only once for each function it appears in\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_aaxopwh0\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5833333333333334,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 62,
+            "candidate_token_count": 62,
+            "code_growth_ratio": 1.0,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_04.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_04.c:8:9: error: 'result' undeclared (first use in this function)\n         result = result * positive_count;\n         ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_04.c:8:9: note: each undeclared identifier is reported only once for each function it appears in\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v4_rtx\\candidates\\variants\\program_04_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_aaxopwh0\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5833333333333334,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 62,
+            "candidate_token_count": 62,
+            "code_growth_ratio": 1.0,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_04\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_aaxopwh0\\original.exe"
+        ]
+      }
+    }
+  ],
+  "interpretation": [
+    "Each input generates several beam candidates; compiler and differential gates are run per candidate.",
+    "The selected candidate is the highest-ranked output by hard-gate results; it may still fail acceptance.",
+    "Lexical transformation checks are proxies, not AST proofs.",
+    "This five-example dataset supports pipeline debugging only, not generalization claims."
+  ]
+}
