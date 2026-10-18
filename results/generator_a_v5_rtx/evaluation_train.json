@@ -1,0 +1,3005 @@
+{
+  "status": "EVALUATION_COMPLETED",
+  "split": "train",
+  "num_examples": 11,
+  "device": {
+    "selected_device": "cuda",
+    "device_name": "NVIDIA GeForce RTX 3050 4GB Laptop GPU",
+    "cuda_available": true,
+    "mps_available": false
+  },
+  "base_model": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\models\\base\\codet5-small",
+  "adapter_path": "models\\checkpoints\\generator_a_lora_v5_rtx\\final_adapter",
+  "purpose": "expanded_validated_loop_transformation_training_v3",
+  "generalization_claim_allowed": false,
+  "generation_config": {
+    "max_new_tokens": 192,
+    "do_sample": false,
+    "num_beams": 8,
+    "num_return_sequences": 4,
+    "no_repeat_ngram_size": 4,
+    "repetition_penalty": 1.1
+  },
+  "results": [
+    {
+      "split": "train",
+      "program_id": "program_01",
+      "original_path": "data\\dataset_v1\\program_01\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_01_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:6:21: warning: self-comparison always evaluates to true [-Wtautological-compare]\n     if ((lhs | rhs) == (lhs | rhs)) {\n                     ^~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:7:32: error: called object 'rhs' is not a function or function pointer\n         total = lhs - (-rhs), &rhs());\n                                ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:3:14: note: declared here\n     int lhs, rhs;\n              ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:7:37: error: expected ';' before ')' token\n         total = lhs - (-rhs), &rhs());\n                                     ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:7:37: error: expected statement before ')' token\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:9:34: error: expected ')' before ';' token\n        total = lhs - ((rhs | rhs);\n                                  ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:10:5: error: expected ';' before '}' token\n     }\n     ^\n",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_l22askzf\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": false,
+        "identifier_jaccard_similarity": 0.5454545454545454,
+        "identifier_transformation_observed": false,
+        "control_flow_transformation_observed": false,
+        "expression_transformation_observed": false,
+        "original_token_count": 40,
+        "candidate_token_count": 87,
+        "code_growth_ratio": 2.175,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": false,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": false
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Compilation failed or original/tests unavailable",
+        "passed_cases": 0,
+        "total_cases": 0
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:6:21: warning: self-comparison always evaluates to true [-Wtautological-compare]\n     if ((lhs | rhs) == (lhs | rhs)) {\n                     ^~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:7:32: error: called object 'rhs' is not a function or function pointer\n         total = lhs - (-rhs), &rhs());\n                                ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:3:14: note: declared here\n     int lhs, rhs;\n              ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:7:37: error: expected ';' before ')' token\n         total = lhs - (-rhs), &rhs());\n                                     ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:7:37: error: expected statement before ')' token\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:9:34: error: expected ')' before ';' token\n        total = lhs - ((rhs | rhs);\n                                  ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c:10:5: error: expected ';' before '}' token\n     }\n     ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_l22askzf\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 40,
+            "candidate_token_count": 87,
+            "code_growth_ratio": 2.175,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": false,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_02.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_02.c:6:21: warning: self-comparison always evaluates to true [-Wtautological-compare]\n     if ((lhs | rhs) == (lhs | rhs)) {\n                     ^~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_02.c:7:29: warning: right-hand operand of comma expression has no effect [-Wunused-value]\n         total = lhs - (-rhs), 0);\n                             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_02.c:7:32: error: expected ';' before ')' token\n         total = lhs - (-rhs), 0);\n                                ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_02.c:7:32: error: expected statement before ')' token\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_l22askzf\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 40,
+            "candidate_token_count": 82,
+            "code_growth_ratio": 2.05,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": false,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_03.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_03.c:6:21: warning: self-comparison always evaluates to true [-Wtautological-compare]\n     if ((lhs | rhs) == (lhs | rhs)) {\n                     ^~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_03.c:7:29: warning: right-hand operand of comma expression has no effect [-Wunused-value]\n         total = lhs - (-rhs), 0);\n                             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_03.c:7:32: error: expected ';' before ')' token\n         total = lhs - (-rhs), 0);\n                                ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_03.c:7:32: error: expected statement before ')' token\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_03.c:9:27: error: expected ';' before ')' token\n        total = lhs -(-rhs));\n                           ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_03.c:9:27: error: expected statement before ')' token\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_l22askzf\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 40,
+            "candidate_token_count": 83,
+            "code_growth_ratio": 2.075,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": false,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c:6:21: warning: self-comparison always evaluates to true [-Wtautological-compare]\n     if ((lhs | rhs) == (lhs | rhs)) {\n                     ^~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c:7:32: error: called object 'rhs' is not a function or function pointer\n         total = lhs - (-rhs), &rhs());\n                                ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c:3:14: note: declared here\n     int lhs, rhs;\n              ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c:7:37: error: expected ';' before ')' token\n         total = lhs - (-rhs), &rhs());\n                                     ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c:7:37: error: expected statement before ')' token\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c:9:33: error: expected ')' before ';' token\n        total = lhs - ((rhs| rhs);\n                                 ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c:10:5: error: expected ';' before '}' token\n     }\n     ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_01_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_l22askzf\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 40,
+            "candidate_token_count": 87,
+            "code_growth_ratio": 2.175,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": false,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_01\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_l22askzf\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_02",
+      "original_path": "data\\dataset_v1\\program_02\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_02_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_s4kgmz2x\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.5454545454545454,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 55,
+        "candidate_token_count": 68,
+        "code_growth_ratio": 1.2363636363636363,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "FAIL",
+        "passed_cases": 3,
+        "total_cases": 4,
+        "failures": [
+          {
+            "case": 1,
+            "original": {
+              "returncode": 0,
+              "stdout": "20",
+              "stderr": "",
+              "timed_out": false
+            },
+            "candidate": {
+              "returncode": 0,
+              "stdout": "10",
+              "stderr": "",
+              "timed_out": false
+            }
+          }
+        ],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_s4kgmz2x\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 55,
+            "candidate_token_count": 68,
+            "code_growth_ratio": 1.2363636363636363,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 3,
+            "total_cases": 4,
+            "failures": [
+              {
+                "case": 1,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "20",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "10",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_02.c:13:2: warning: ISO C does not allow extra ';' outside of a function [-Wpedantic]\n };\n  ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_02.c:14:1: error: expected identifier or '(' before '}' token\n }\n ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_s4kgmz2x\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 55,
+            "candidate_token_count": 70,
+            "code_growth_ratio": 1.2727272727272727,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_s4kgmz2x\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 55,
+            "candidate_token_count": 68,
+            "code_growth_ratio": 1.2363636363636363,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 3,
+            "total_cases": 4,
+            "failures": [
+              {
+                "case": 1,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "20",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "10",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_04.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_04.c:12:5: error: 'Return' undeclared (first use in this function)\n     Return 0;\n     ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_04.c:12:5: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_04.c:12:12: error: expected ';' before numeric constant\n     Return 0;\n            ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_02_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_s4kgmz2x\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 55,
+            "candidate_token_count": 68,
+            "code_growth_ratio": 1.2363636363636363,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_02\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_s4kgmz2x\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_03",
+      "original_path": "data\\dataset_v1\\program_03\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_03_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_03_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_p3w3mi9c\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.6,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 46,
+        "candidate_token_count": 58,
+        "code_growth_ratio": 1.2608695652173914,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "PASS",
+        "passed_cases": 5,
+        "total_cases": 5,
+        "failures": [],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_03_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_03_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_p3w3mi9c\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.6,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 46,
+            "candidate_token_count": 58,
+            "code_growth_ratio": 1.2608695652173914,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 5,
+            "total_cases": 5,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_03_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_03_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_p3w3mi9c\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.6,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 46,
+            "candidate_token_count": 58,
+            "code_growth_ratio": 1.2608695652173914,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 5,
+            "total_cases": 5,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_03_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_03_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_p3w3mi9c\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.6,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 46,
+            "candidate_token_count": 58,
+            "code_growth_ratio": 1.2608695652173914,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 5,
+            "total_cases": 5,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_03_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_03_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_p3w3mi9c\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.6,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 46,
+            "candidate_token_count": 58,
+            "code_growth_ratio": 1.2608695652173914,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 5,
+            "total_cases": 5,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_03\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_p3w3mi9c\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_06",
+      "original_path": "data\\dataset_v1\\program_06\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_06_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:6:1: error: 'Chains' undeclared (first use in this function)\n Chains int index = 1;\n ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:6:1: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:6:8: error: expected ';' before 'int'\n Chains int index = 1;\n        ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:7:12: error: 'index' undeclared (first use in this function)\n     while (index < limit) {\n            ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:9:13: error: 'scan' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n             ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:9:18: error: expected ')' before 'f'\n         if (scan f(\"%d\",&item) != 1) return0;\n                  ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:9:38: error: 'return0' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n                                      ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:14:14: error: 'EB' undeclared (first use in this function)\n     return 0;EB}\n              ^~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:14:16: error: expected ';' before '}' token\n     return 0;EB}\n                ^\n",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_fkmzx_vl\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.3157894736842105,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 91,
+        "candidate_token_count": 98,
+        "code_growth_ratio": 1.0769230769230769,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": false
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Compilation failed or original/tests unavailable",
+        "passed_cases": 0,
+        "total_cases": 0
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:6:1: error: 'Chains' undeclared (first use in this function)\n Chains int index = 1;\n ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:6:1: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:6:8: error: expected ';' before 'int'\n Chains int index = 1;\n        ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:7:12: error: 'index' undeclared (first use in this function)\n     while (index < limit) {\n            ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:9:13: error: 'scan' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n             ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:9:18: error: expected ')' before 'f'\n         if (scan f(\"%d\",&item) != 1) return0;\n                  ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:9:38: error: 'return0' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n                                      ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:14:14: error: 'EB' undeclared (first use in this function)\n     return 0;EB}\n              ^~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c:14:16: error: expected ';' before '}' token\n     return 0;EB}\n                ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_fkmzx_vl\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.3157894736842105,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 91,
+            "candidate_token_count": 98,
+            "code_growth_ratio": 1.0769230769230769,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c:6:1: error: 'Chains' undeclared (first use in this function)\n Chains int index = 1;\n ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c:6:1: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c:6:8: error: expected ';' before 'int'\n Chains int index = 1;\n        ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c:7:12: error: 'index' undeclared (first use in this function)\n     while (index < limit) {\n            ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c:9:13: error: 'scan' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n             ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c:9:18: error: expected ')' before 'f'\n         if (scan f(\"%d\",&item) != 1) return0;\n                  ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c:9:38: error: 'return0' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n                                      ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c:14:14: error: 'rollment' undeclared (first use in this function)\n     return 0;rollment}\n              ^~~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c:14:22: error: expected ';' before '}' token\n     return 0;rollment}\n                      ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_fkmzx_vl\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.3157894736842105,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 91,
+            "candidate_token_count": 98,
+            "code_growth_ratio": 1.0769230769230769,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c:6:1: error: 'Chains' undeclared (first use in this function)\n Chains int index = 1;\n ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c:6:1: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c:6:8: error: expected ';' before 'int'\n Chains int index = 1;\n        ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c:7:12: error: 'index' undeclared (first use in this function)\n     while (index < limit) {\n            ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c:9:13: error: 'scan' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n             ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c:9:18: error: expected ')' before 'f'\n         if (scan f(\"%d\",&item) != 1) return0;\n                  ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c:9:38: error: 'return0' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n                                      ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c:14:14: error: 'baseline' undeclared (first use in this function)\n     return 0;baseline}\n              ^~~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c:14:22: error: expected ';' before '}' token\n     return 0;baseline}\n                      ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_fkmzx_vl\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.3157894736842105,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 91,
+            "candidate_token_count": 98,
+            "code_growth_ratio": 1.0769230769230769,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c:6:1: error: 'Chains' undeclared (first use in this function)\n Chains int index = 1;\n ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c:6:1: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c:6:8: error: expected ';' before 'int'\n Chains int index = 1;\n        ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c:7:12: error: 'index' undeclared (first use in this function)\n     while (index < limit) {\n            ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c:9:13: error: 'scan' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n             ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c:9:18: error: expected ')' before 'f'\n         if (scan f(\"%d\",&item) != 1) return0;\n                  ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c:9:38: error: 'return0' undeclared (first use in this function)\n         if (scan f(\"%d\",&item) != 1) return0;\n                                      ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c:14:15: error: 'fflib' undeclared (first use in this function)\n     return 0; fflib}\n               ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c:14:20: error: expected ';' before '}' token\n     return 0; fflib}\n                    ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_06_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_fkmzx_vl\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.3157894736842105,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 91,
+            "candidate_token_count": 98,
+            "code_growth_ratio": 1.0769230769230769,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_06\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_fkmzx_vl\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_07",
+      "original_path": "data\\dataset_v1\\program_07\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_07_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:6:13: error: expected expression before '=' token\n             = positive_count + (length > 0) ? 1 : 0;\n             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:8:13: error: break statement not within loop or switch\n             break;\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c: At top level:\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:10:12: error: expected declaration specifiers or '...' before string constant\n     printf(\"%d\\n\", positive_count);\n            ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:10:20: error: unknown type name 'positive_count'\n     printf(\"%d\\n\", positive_count);\n                    ^~~~~~~~~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:11:5: error: expected identifier or '(' before 'return'\n     return\n     ^~~~~~\n",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_mvcwbcja\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.5,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 96,
+        "candidate_token_count": 73,
+        "code_growth_ratio": 0.7604166666666666,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": false
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Compilation failed or original/tests unavailable",
+        "passed_cases": 0,
+        "total_cases": 0
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:6:13: error: expected expression before '=' token\n             = positive_count + (length > 0) ? 1 : 0;\n             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:8:13: error: break statement not within loop or switch\n             break;\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c: At top level:\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:10:12: error: expected declaration specifiers or '...' before string constant\n     printf(\"%d\\n\", positive_count);\n            ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:10:20: error: unknown type name 'positive_count'\n     printf(\"%d\\n\", positive_count);\n                    ^~~~~~~~~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c:11:5: error: expected identifier or '(' before 'return'\n     return\n     ^~~~~~\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_mvcwbcja\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 96,
+            "candidate_token_count": 73,
+            "code_growth_ratio": 0.7604166666666666,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c:6:13: error: expected expression before '=' token\n             = positive_count + (length > 0) ? 1 : 0;\n             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c:8:15: error: 'index' undeclared (first use in this function)\n             ++index;\n               ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c:8:15: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c: At top level:\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c:10:12: error: expected declaration specifiers or '...' before string constant\n     printf(\"%d\\n\", positive_count);\n            ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c:10:20: error: unknown type name 'positive_count'\n     printf(\"%d\\n\", positive_count);\n                    ^~~~~~~~~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c:11:5: error: expected identifier or '(' before 'return'\n     return 0);\n     ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c:12:1: error: expected identifier or '(' before '}' token\n }\n ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_mvcwbcja\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.46153846153846156,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 96,
+            "candidate_token_count": 79,
+            "code_growth_ratio": 0.8229166666666666,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c:6:13: error: expected expression before '=' token\n             = positive_count + ((item > 0) ? 1 : 0);\n             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c:7:15: error: 'index' undeclared (first use in this function)\n             ++index;\n               ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c:7:15: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c: At top level:\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c:9:12: error: expected declaration specifiers or '...' before string constant\n     printf(\"%d\\n\", positive_count);\n            ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c:9:20: error: unknown type name 'positive_count'\n     printf(\"%d\\n\", positive_count);\n                    ^~~~~~~~~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c:10:5: error: expected identifier or '(' before 'return'\n     return 0;rollment}\n     ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c:10:22: error: expected '=', ',', ';', 'asm' or '__attribute__' before '}' token\n     return 0;rollment}\n                      ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_mvcwbcja\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 96,
+            "candidate_token_count": 72,
+            "code_growth_ratio": 0.75,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c:6:13: error: expected expression before '=' token\n             = positive_count + ((item > 0) ? 1 : 0);\n             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c:7:15: error: 'index' undeclared (first use in this function)\n             ++index;\n               ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c:7:15: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c: At top level:\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c:9:12: error: expected declaration specifiers or '...' before string constant\n     printf(\"%d\\n\", positive_count);\n            ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c:9:20: error: unknown type name 'positive_count'\n     printf(\"%d\\n\", positive_count);\n                    ^~~~~~~~~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c:10:5: error: expected identifier or '(' before 'return'\n     return 0;EB}\n     ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c:10:16: error: expected '=', ',', ';', 'asm' or '__attribute__' before '}' token\n     return 0;EB}\n                ^\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_07_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_mvcwbcja\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 96,
+            "candidate_token_count": 72,
+            "code_growth_ratio": 0.75,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_07\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_mvcwbcja\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_08",
+      "original_path": "data\\dataset_v1\\program_08\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_08_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:6:13: error: 'index' undeclared (first use in this function)\n     switch (index < length) ? 1 : 0) {\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:6:13: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:6:29: error: expected expression before '?' token\n     switch (index < length) ? 1 : 0) {\n                             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:6:36: error: expected statement before ')' token\n     switch (index < length) ? 1 : 0) {\n                                    ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:8:9: error: case label not within a switch statement\n         case 1:\n         ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:9:13: error: 'bigger' undeclared (first use in this function)\n             bigger = item-0;\n             ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:10:13: error: break statement not within loop or switch\n             break;\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:11:9: error: 'default' label not within a switch statement\n         default:\n         ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:12:13: error: 'highest' undeclared (first use in this function)\n             highest = item-1;\n             ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:15:5: error: 'return0' undeclared (first use in this function)\n     return0;\n     ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:5:9: warning: unused variable 'first_item' [-Wunused-variable]\n     int first_item;\n         ^~~~~~~~~~\n",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_vnb3dscm\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": false,
+        "identifier_jaccard_similarity": 0.3333333333333333,
+        "identifier_transformation_observed": false,
+        "control_flow_transformation_observed": false,
+        "expression_transformation_observed": false,
+        "original_token_count": 115,
+        "candidate_token_count": 84,
+        "code_growth_ratio": 0.7304347826086957,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": false
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Compilation failed or original/tests unavailable",
+        "passed_cases": 0,
+        "total_cases": 0
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:6:13: error: 'index' undeclared (first use in this function)\n     switch (index < length) ? 1 : 0) {\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:6:13: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:6:29: error: expected expression before '?' token\n     switch (index < length) ? 1 : 0) {\n                             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:6:36: error: expected statement before ')' token\n     switch (index < length) ? 1 : 0) {\n                                    ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:8:9: error: case label not within a switch statement\n         case 1:\n         ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:9:13: error: 'bigger' undeclared (first use in this function)\n             bigger = item-0;\n             ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:10:13: error: break statement not within loop or switch\n             break;\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:11:9: error: 'default' label not within a switch statement\n         default:\n         ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:12:13: error: 'highest' undeclared (first use in this function)\n             highest = item-1;\n             ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:15:5: error: 'return0' undeclared (first use in this function)\n     return0;\n     ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c:5:9: warning: unused variable 'first_item' [-Wunused-variable]\n     int first_item;\n         ^~~~~~~~~~\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_vnb3dscm\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.3333333333333333,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 115,
+            "candidate_token_count": 84,
+            "code_growth_ratio": 0.7304347826086957,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "lm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:6:13: error: 'index' undeclared (first use in this function)\n     switch (index < length) ? 1 : 0) {\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:6:13: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:6:29: error: expected expression before '?' token\n     switch (index < length) ? 1 : 0) {\n                             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:6:36: error: expected statement before ')' token\n     switch (index < length) ? 1 : 0) {\n                                    ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:8:9: error: case label not within a switch statement\n         case 1:\n         ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:9:13: error: 'bigger' undeclared (first use in this function)\n             bigger = item-0;\n             ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:10:13: error: break statement not within loop or switch\n             break;\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:11:9: error: 'default' label not within a switch statement\n         default:\n         ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:12:13: error: 'highest' undeclared (first use in this function)\n             highest = item-1;\n             ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:15:13: error: expected ';' before ')' token\n     return 0);\n             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:15:13: error: expected statement before ')' token\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c:5:9: warning: unused variable 'first_item' [-Wunused-variable]\n     int first_item;\n         ^~~~~~~~~~\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_vnb3dscm\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.35294117647058826,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 115,
+            "candidate_token_count": 86,
+            "code_growth_ratio": 0.7478260869565218,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:6:13: error: 'index' undeclared (first use in this function)\n     switch (index < length) ? 1 : 0) {\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:6:13: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:6:29: error: expected expression before '?' token\n     switch (index < length) ? 1 : 0) {\n                             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:6:36: error: expected statement before ')' token\n     switch (index < length) ? 1 : 0) {\n                                    ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:8:9: error: case label not within a switch statement\n         case 1:\n         ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:9:13: error: 'bigger' undeclared (first use in this function)\n             bigger = item-0;\n             ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:10:13: error: break statement not within loop or switch\n             break;\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:11:9: error: 'default' label not within a switch statement\n         default:\n         ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:12:13: error: 'highest' undeclared (first use in this function)\n             highest = item-1;\n             ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:13:5: error: break statement not within loop or switch\n     break;\n     ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c:5:9: warning: unused variable 'first_item' [-Wunused-variable]\n     int first_item;\n         ^~~~~~~~~~\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_vnb3dscm\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.35294117647058826,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 115,
+            "candidate_token_count": 87,
+            "code_growth_ratio": 0.7565217391304347,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:6:13: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:6:29: error: expected expression before '?' token\n     switch (index < length) ? 1 : 0) {\n                             ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:6:36: error: expected statement before ')' token\n     switch (index < length) ? 1 : 0) {\n                                    ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:8:9: error: case label not within a switch statement\n         case 1:\n         ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:9:13: error: 'bigger' undeclared (first use in this function)\n             bigger = item-0;\n             ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:10:13: error: break statement not within loop or switch\n             break;\n             ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:11:9: error: 'default' label not within a switch statement\n         default:\n         ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:12:13: error: 'highest' undeclared (first use in this function)\n             highest = item-1;\n             ^~~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:13:5: error: break statement not within loop or switch\n     break;\n     ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:16:5: error: 'Return' undeclared (first use in this function)\n     Return 0;\n     ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:16:12: error: expected ';' before numeric constant\n     Return 0;\n            ^\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c:5:9: warning: unused variable 'first_item' [-Wunused-variable]\n     int first_item;\n         ^~~~~~~~~~\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_08_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_vnb3dscm\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.3333333333333333,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 115,
+            "candidate_token_count": 87,
+            "code_growth_ratio": 0.7565217391304347,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_08\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_vnb3dscm\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_09",
+      "original_path": "data\\dataset_v1\\program_09\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_09_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_09_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_71uauhmw\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.4,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 62,
+        "candidate_token_count": 68,
+        "code_growth_ratio": 1.096774193548387,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "PASS",
+        "passed_cases": 1,
+        "total_cases": 1,
+        "failures": [],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_09_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_09_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_71uauhmw\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 62,
+            "candidate_token_count": 68,
+            "code_growth_ratio": 1.096774193548387,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_09_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_09_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_71uauhmw\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 62,
+            "candidate_token_count": 68,
+            "code_growth_ratio": 1.096774193548387,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_09_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_09_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_71uauhmw\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 62,
+            "candidate_token_count": 68,
+            "code_growth_ratio": 1.096774193548387,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_09_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_09_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_71uauhmw\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 62,
+            "candidate_token_count": 68,
+            "code_growth_ratio": 1.096774193548387,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_09\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_71uauhmw\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_10",
+      "original_path": "data\\dataset_v1\\program_10\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_10_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_ujfzkdb1\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.4444444444444444,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 35,
+        "candidate_token_count": 38,
+        "code_growth_ratio": 1.0857142857142856,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "PASS",
+        "passed_cases": 1,
+        "total_cases": 1,
+        "failures": [],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_ujfzkdb1\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4444444444444444,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 35,
+            "candidate_token_count": 38,
+            "code_growth_ratio": 1.0857142857142856,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_02.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_02.c:2:73: error: 'val22' undeclared (first use in this function)\n int main() { int val1 = 10, val2 = 20; int res = (val1 < val2) ? val1 : val22; return res; }\n                                                                         ^~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_02.c:2:73: note: each undeclared identifier is reported only once for each function it appears in\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_ujfzkdb1\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 35,
+            "candidate_token_count": 38,
+            "code_growth_ratio": 1.0857142857142856,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_ujfzkdb1\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4444444444444444,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 35,
+            "candidate_token_count": 38,
+            "code_growth_ratio": 1.0857142857142856,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_04.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_04.c:2:40: error: 'intres' undeclared (first use in this function)\n int main() { int val1 = 10, val2 = 20; intres = (val1 < val2) ? val1 : val2; return res; }\n                                        ^~~~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_04.c:2:40: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_04.c:2:85: error: 'res' undeclared (first use in this function)\n int main() { int val1 = 10, val2 = 20; intres = (val1 < val2) ? val1 : val2; return res; }\n                                                                                     ^~~\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_10_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_ujfzkdb1\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 35,
+            "candidate_token_count": 37,
+            "code_growth_ratio": 1.0571428571428572,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_10\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_ujfzkdb1\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_11",
+      "original_path": "data\\dataset_v1\\program_11\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_11_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_11_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_gszuy99g\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.5,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 42,
+        "candidate_token_count": 45,
+        "code_growth_ratio": 1.0714285714285714,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "PASS",
+        "passed_cases": 1,
+        "total_cases": 1,
+        "failures": [],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_11_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_11_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_gszuy99g\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 42,
+            "candidate_token_count": 45,
+            "code_growth_ratio": 1.0714285714285714,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_11_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_11_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_gszuy99g\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 42,
+            "candidate_token_count": 45,
+            "code_growth_ratio": 1.0714285714285714,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_11_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_11_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_gszuy99g\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 42,
+            "candidate_token_count": 45,
+            "code_growth_ratio": 1.0714285714285714,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_11_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_11_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_gszuy99g\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 42,
+            "candidate_token_count": 45,
+            "code_growth_ratio": 1.0714285714285714,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_11\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_gszuy99g\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_12",
+      "original_path": "data\\dataset_v1\\program_12\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_12_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_t6pd6lv0\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.45454545454545453,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 56,
+        "candidate_token_count": 56,
+        "code_growth_ratio": 1.0,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "PASS",
+        "passed_cases": 1,
+        "total_cases": 1,
+        "failures": [],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_t6pd6lv0\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.45454545454545453,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 56,
+            "candidate_token_count": 56,
+            "code_growth_ratio": 1.0,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_t6pd6lv0\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.45454545454545453,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 56,
+            "candidate_token_count": 56,
+            "code_growth_ratio": 1.0,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_03.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_03.c:2:68: error: 'num' undeclared (first use in this function)\n int main() { int Num = 5; int acc = 1; int iter = 1; while(iter <= num) { acc = acc * iter; iter++; } printf(\"%d\\n\", acc); return 0; }\n                                                                    ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_03.c:2:68: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_03.c:2:18: warning: unused variable 'Num' [-Wunused-variable]\n int main() { int Num = 5; int acc = 1; int iter = 1; while(iter <= num) { acc = acc * iter; iter++; } printf(\"%d\\n\", acc); return 0; }\n                  ^~~\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_t6pd6lv0\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4166666666666667,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 56,
+            "candidate_token_count": 56,
+            "code_growth_ratio": 1.0,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_04.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_04.c:2:68: error: 'Num' undeclared (first use in this function)\n int main() { int num = 5; int acc = 1; int iter = 1; while(iter <= Num) { acc = acc * iter; iter++; } printf(\"%d\\n\", acc); return 0; }\n                                                                    ^~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_04.c:2:68: note: each undeclared identifier is reported only once for each function it appears in\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_04.c:2:18: warning: unused variable 'num' [-Wunused-variable]\n int main() { int num = 5; int acc = 1; int iter = 1; while(iter <= Num) { acc = acc * iter; iter++; } printf(\"%d\\n\", acc); return 0; }\n                  ^~~\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_12_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_t6pd6lv0\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4166666666666667,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 56,
+            "candidate_token_count": 56,
+            "code_growth_ratio": 1.0,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_12\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_t6pd6lv0\\original.exe"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_13",
+      "original_path": "data\\dataset_v1\\program_13\\original.c",
+      "candidate_path": "results\\generator_a_v5_rtx\\candidates\\program_13_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_01.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_sgqx4tkq\\candidate_01.exe"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.5,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 42,
+        "candidate_token_count": 44,
+        "code_growth_ratio": 1.0476190476190477,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "PASS",
+        "passed_cases": 1,
+        "total_cases": 1,
+        "failures": [],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_01.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_sgqx4tkq\\candidate_01.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 42,
+            "candidate_token_count": 44,
+            "code_growth_ratio": 1.0476190476190477,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_02.c: In function 'main':\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_02.c:2:81: error: 'Step' undeclared (first use in this function)\n int main() { int total = 0; int step = 0; while(step < 10) { total = total + 1; Step++; } return total; }\n                                                                                 ^~~~\nC:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_02.c:2:81: note: each undeclared identifier is reported only once for each function it appears in\n",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_02.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_sgqx4tkq\\candidate_02.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.4444444444444444,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 42,
+            "candidate_token_count": 44,
+            "code_growth_ratio": 1.0476190476190477,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_03.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_sgqx4tkq\\candidate_03.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 42,
+            "candidate_token_count": 44,
+            "code_growth_ratio": 1.0476190476190477,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 0,
+            "total_cases": 1,
+            "failures": [
+              {
+                "case": 1,
+                "original": {
+                  "returncode": 10,
+                  "stdout": "",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 9,
+                  "stdout": "",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "C:\\MinGW\\bin\\gcc.EXE",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\results\\generator_a_v5_rtx\\candidates\\variants\\program_13_candidate_04.c",
+              "-o",
+              "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_sgqx4tkq\\candidate_04.exe"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 42,
+            "candidate_token_count": 44,
+            "code_growth_ratio": 1.0476190476190477,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "C:\\MinGW\\bin\\gcc.EXE",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "C:\\Users\\ANIK\\topic-a-llm-obfuscation\\data\\dataset_v1\\program_13\\original.c",
+          "-o",
+          "C:\\Users\\ANIK\\AppData\\Local\\Temp\\generator_a_v2_eval_sgqx4tkq\\original.exe"
+        ]
+      }
+    }
+  ],
+  "interpretation": [
+    "Each input generates several beam candidates; compiler and differential gates are run per candidate.",
+    "The selected candidate is the highest-ranked output by hard-gate results; it may still fail acceptance.",
+    "Lexical transformation checks are proxies, not AST proofs.",
+    "This five-example dataset supports pipeline debugging only, not generalization claims."
+  ]
+}
