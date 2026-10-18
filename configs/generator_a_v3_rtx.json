@@ -1,0 +1,60 @@
+{
+  "model_name_or_path": "models/base/codet5-small",
+  "dataset": {
+    "train": "data/training_v2/generator_a_train.jsonl",
+    "validation": "data/training_v1/generator_a_validation.jsonl",
+    "test": "data/training_v1/generator_a_test.jsonl"
+  },
+  "output": {
+    "trainer_dir": "models/checkpoints/generator_a_lora_v3_rtx",
+    "adapter_dir": "models/checkpoints/generator_a_lora_v3_rtx/final_adapter",
+    "report_dir": "results/generator_a_v3_rtx"
+  },
+  "tokenization": {
+    "max_source_length": 512,
+    "max_target_length": 512,
+    "reject_truncation": true
+  },
+  "training": {
+    "seed": 42,
+    "num_train_epochs": 8,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "per_device_train_batch_size": 1,
+    "per_device_eval_batch_size": 1,
+    "gradient_accumulation_steps": 1,
+    "logging_steps": 10,
+    "eval_steps": 50,
+    "save_steps": 50,
+    "save_total_limit": 2
+  },
+  "lora": {
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "q",
+      "k",
+      "v",
+      "o",
+      "wi",
+      "wo"
+    ]
+  },
+  "generation": {
+    "max_new_tokens": 192,
+    "do_sample": false,
+    "num_beams": 4,
+    "num_return_sequences": 4,
+    "no_repeat_ngram_size": 4,
+    "repetition_penalty": 1.08
+  },
+  "experiment": {
+    "dataset_version": "dataset_v1",
+    "specification": "configs/specification_v1.json",
+    "purpose": "expanded_validated_loop_transformation_training_v3",
+    "generalization_claim_allowed": false,
+    "training_examples_note": "Three additional synthetic training-only programs provide validated for-to-while examples. Programs 04 and 05 remain validation/test and are not copied into training."
+  }
+}
