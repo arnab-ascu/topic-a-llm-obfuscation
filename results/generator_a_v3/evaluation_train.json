@@ -1,0 +1,1891 @@
+{
+  "status": "EVALUATION_COMPLETED",
+  "split": "train",
+  "num_examples": 6,
+  "device": {
+    "selected_device": "mps",
+    "device_name": "Apple Metal Performance Shaders",
+    "cuda_available": false,
+    "mps_available": true
+  },
+  "base_model": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/models/base/codet5-small",
+  "adapter_path": "models/checkpoints/generator_a_lora_v3/final_adapter",
+  "purpose": "expanded_validated_loop_transformation_training_v3",
+  "generalization_claim_allowed": false,
+  "generation_config": {
+    "max_new_tokens": 192,
+    "do_sample": false,
+    "num_beams": 4,
+    "num_return_sequences": 4,
+    "no_repeat_ngram_size": 4,
+    "repetition_penalty": 1.08
+  },
+  "results": [
+    {
+      "split": "train",
+      "program_id": "program_01",
+      "original_path": "data/dataset_v1/program_01/original.c",
+      "candidate_path": "results/generator_a_v3/candidates/program_01_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 2,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_02.c:6:5: warning: switch condition has boolean value [-Wswitch-bool]\n    6 |     switch ((left | right) == (right | left)) {\n      |     ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 warning generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_02.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_jcpnj10n/candidate_02"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.5454545454545454,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 40,
+        "candidate_token_count": 72,
+        "code_growth_ratio": 1.8,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "PASS",
+        "passed_cases": 4,
+        "total_cases": 4,
+        "failures": [],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_01_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_01.c:6:5: warning: switch condition has boolean value [-Wswitch-bool]\n    6 |     switch ((left | right) == (right | left)) {\n      |     ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_01.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_jcpnj10n/candidate_01"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 40,
+            "candidate_token_count": 72,
+            "code_growth_ratio": 1.8,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 1,
+            "total_cases": 4,
+            "failures": [
+              {
+                "case": 1,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "30",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "10",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 2,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "3",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "-5",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 4,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "70",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "100",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_01_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_02.c:6:5: warning: switch condition has boolean value [-Wswitch-bool]\n    6 |     switch ((left | right) == (right | left)) {\n      |     ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_02.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_jcpnj10n/candidate_02"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 40,
+            "candidate_token_count": 72,
+            "code_growth_ratio": 1.8,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 4,
+            "total_cases": 4,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_01_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_03.c:6:5: warning: switch condition has boolean value [-Wswitch-bool]\n    6 |     switch ((left | right) == (right | left)) {\n      |     ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_03.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_jcpnj10n/candidate_03"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 40,
+            "candidate_token_count": 69,
+            "code_growth_ratio": 1.725,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 1,
+            "total_cases": 4,
+            "failures": [
+              {
+                "case": 1,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "30",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "10",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 2,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "3",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "-5",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 4,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "70",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "100",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_01_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_04.c:6:5: warning: switch condition has boolean value [-Wswitch-bool]\n    6 |     switch ((left | right) == (right | left)) {\n      |     ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_04.c:11:20: error: use of undeclared identifier 'highest'\n   11 |     printf(\"%d\\n\", highest);\n      |                    ^~~~~~~\n1 warning and 1 error generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_01_candidate_04.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_jcpnj10n/candidate_04"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 40,
+            "candidate_token_count": 72,
+            "code_growth_ratio": 1.8,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_01/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_jcpnj10n/original"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_02",
+      "original_path": "data/dataset_v1/program_02/original.c",
+      "candidate_path": "results/generator_a_v3/candidates/program_02_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_02_candidate_01.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_703ayg31/candidate_01"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.5454545454545454,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 55,
+        "candidate_token_count": 69,
+        "code_growth_ratio": 1.2545454545454546,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "FAIL",
+        "passed_cases": 2,
+        "total_cases": 4,
+        "failures": [
+          {
+            "case": 1,
+            "original": {
+              "returncode": 0,
+              "stdout": "20",
+              "stderr": "",
+              "timed_out": false
+            },
+            "candidate": {
+              "returncode": 0,
+              "stdout": "-71155328",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          {
+            "case": 3,
+            "original": {
+              "returncode": 0,
+              "stdout": "5",
+              "stderr": "",
+              "timed_out": false
+            },
+            "candidate": {
+              "returncode": 0,
+              "stdout": "-71155328",
+              "stderr": "",
+              "timed_out": false
+            }
+          }
+        ],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_02_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_02_candidate_01.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_703ayg31/candidate_01"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 55,
+            "candidate_token_count": 69,
+            "code_growth_ratio": 1.2545454545454546,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 2,
+            "total_cases": 4,
+            "failures": [
+              {
+                "case": 1,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "20",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "-71155328",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 3,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "5",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "-71155328",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_02_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_02_candidate_02.c:9:2: error: expected '}'\n    9 | }\n      |  ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_02_candidate_02.c:2:16: note: to match this '{'\n    2 | int main(void) {\n      |                ^\n1 error generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_02_candidate_02.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_703ayg31/candidate_02"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 55,
+            "candidate_token_count": 50,
+            "code_growth_ratio": 0.9090909090909091,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_02_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_02_candidate_03.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_703ayg31/candidate_03"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 55,
+            "candidate_token_count": 69,
+            "code_growth_ratio": 1.2545454545454546,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 2,
+            "total_cases": 4,
+            "failures": [
+              {
+                "case": 1,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "20",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "-71155328",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 3,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "5",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "-71155328",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_02_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_02_candidate_04.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_703ayg31/candidate_04"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5454545454545454,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 55,
+            "candidate_token_count": 69,
+            "code_growth_ratio": 1.2545454545454546,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 2,
+            "total_cases": 4,
+            "failures": [
+              {
+                "case": 1,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "20",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "-71155328",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 3,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "5",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "-71155328",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_02/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_703ayg31/original"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_03",
+      "original_path": "data/dataset_v1/program_03/original.c",
+      "candidate_path": "results/generator_a_v3/candidates/program_03_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_03_candidate_01.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_3gnhrqer/candidate_01"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.6,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 46,
+        "candidate_token_count": 58,
+        "code_growth_ratio": 1.2608695652173914,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": true
+      },
+      "semantic_differential_test": {
+        "status": "PASS",
+        "passed_cases": 5,
+        "total_cases": 5,
+        "failures": [],
+        "comparison": "stdout and return code"
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_03_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_03_candidate_01.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_3gnhrqer/candidate_01"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.6,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 46,
+            "candidate_token_count": 58,
+            "code_growth_ratio": 1.2608695652173914,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 5,
+            "total_cases": 5,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_03_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_03_candidate_02.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_3gnhrqer/candidate_02"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.6,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 46,
+            "candidate_token_count": 58,
+            "code_growth_ratio": 1.2608695652173914,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "PASS",
+            "passed_cases": 5,
+            "total_cases": 5,
+            "failures": [],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_03_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_03_candidate_03.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_3gnhrqer/candidate_03"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.6,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 46,
+            "candidate_token_count": 56,
+            "code_growth_ratio": 1.2173913043478262,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 3,
+            "total_cases": 5,
+            "failures": [
+              {
+                "case": 2,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "10",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "9",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 5,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "37",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 0,
+                  "stdout": "36",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_03_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_03_candidate_04.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_3gnhrqer/candidate_04"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.6,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 46,
+            "candidate_token_count": 58,
+            "code_growth_ratio": 1.2608695652173914,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": true
+          },
+          "semantic_differential_test": {
+            "status": "FAIL",
+            "passed_cases": 0,
+            "total_cases": 5,
+            "failures": [
+              {
+                "case": 1,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "10",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 1,
+                  "stdout": "10",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 2,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "10",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 1,
+                  "stdout": "10",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 3,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "0",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 1,
+                  "stdout": "0",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 4,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "37",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 1,
+                  "stdout": "37",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              },
+              {
+                "case": 5,
+                "original": {
+                  "returncode": 0,
+                  "stdout": "37",
+                  "stderr": "",
+                  "timed_out": false
+                },
+                "candidate": {
+                  "returncode": 1,
+                  "stdout": "37",
+                  "stderr": "",
+                  "timed_out": false
+                }
+              }
+            ],
+            "comparison": "stdout and return code"
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_03/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_3gnhrqer/original"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_06",
+      "original_path": "data/dataset_v1/program_06/original.c",
+      "candidate_path": "results/generator_a_v3/candidates/program_06_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_01.c:5:25: error: expected '}'\n    5 |     int accumulator = 0;\n      |                         ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_01.c:2:16: note: to match this '{'\n    2 | int main(void) {\n      |                ^\n1 error generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_01.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_y_nr5uqp/candidate_01"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": false,
+        "identifier_jaccard_similarity": 0.4166666666666667,
+        "identifier_transformation_observed": false,
+        "control_flow_transformation_observed": false,
+        "expression_transformation_observed": false,
+        "original_token_count": 91,
+        "candidate_token_count": 41,
+        "code_growth_ratio": 0.45054945054945056,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": false
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Compilation failed or original/tests unavailable",
+        "passed_cases": 0,
+        "total_cases": 0
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_06_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_01.c:5:25: error: expected '}'\n    5 |     int accumulator = 0;\n      |                         ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_01.c:2:16: note: to match this '{'\n    2 | int main(void) {\n      |                ^\n1 error generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_01.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_y_nr5uqp/candidate_01"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.4166666666666667,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 91,
+            "candidate_token_count": 41,
+            "code_growth_ratio": 0.45054945054945056,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_06_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_02.c:6:23: error: use of undeclared identifier 'EB'\n    6 |         int index = 0;EB    while (index < limit) {\n      |                       ^~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_02.c:8:26: warning: missing terminating '\"' character [-Winvalid-pp-token]\n    8 |         if (scannerf(\"%d\"\", &item) != 1) return0;\n      |                          ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_02.c:13:14: error: use of undeclared identifier 'esis'\n   13 |     return 0;esis}\n      |              ^~~~\n1 warning and 2 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_02.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_y_nr5uqp/candidate_02"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.2631578947368421,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 91,
+            "candidate_token_count": 75,
+            "code_growth_ratio": 0.8241758241758241,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_06_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_03.c:6:23: error: use of undeclared identifier 'EB'\n    6 |         int index = 0;EB    while (index < limit) {\n      |                       ^~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_03.c:8:26: warning: missing terminating '\"' character [-Winvalid-pp-token]\n    8 |         if (scannerf(\"%d\"\", &item) != 1) return0;\n      |                          ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_03.c:13:14: error: use of undeclared identifier 'EB'\n   13 |     return 0;EB}\n      |              ^~\n1 warning and 2 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_03.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_y_nr5uqp/candidate_03"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.2777777777777778,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 91,
+            "candidate_token_count": 75,
+            "code_growth_ratio": 0.8241758241758241,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_06_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_04.c:6:23: error: use of undeclared identifier 'EB'\n    6 |         int index = 0;EB    while (index < limit) {\n      |                       ^~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_04.c:8:26: warning: missing terminating '\"' character [-Winvalid-pp-token]\n    8 |         if (scannerf(\"%d\"\", &item) != 1) return0;\n      |                          ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_04.c:13:14: error: use of undeclared identifier 'ERp'\n   13 |     return 0;ERp}\n      |              ^~~\n1 warning and 2 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_06_candidate_04.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_y_nr5uqp/candidate_04"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.2631578947368421,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 91,
+            "candidate_token_count": 75,
+            "code_growth_ratio": 0.8241758241758241,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_06/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_y_nr5uqp/original"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_07",
+      "original_path": "data/dataset_v1/program_07/original.c",
+      "candidate_path": "results/generator_a_v3/candidates/program_07_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_01.c:9:30: error: use of undeclared identifier 'return0'; did you mean 'return'?\n    9 |         if ((item > 0) != 0) return0;\n      |                              ^~~~~~~\n      |                              return\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_01.c:9:30: error: non-void function 'main' should return a value [-Wreturn-mismatch]\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_01.c:13:5: error: use of undeclared identifier 'Return'\n   13 |     Return 0;\n      |     ^~~~~~\n3 errors generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_01.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_4n0fi_9l/candidate_01"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.375,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_token_count": 96,
+        "candidate_token_count": 85,
+        "code_growth_ratio": 0.8854166666666666,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": false
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Compilation failed or original/tests unavailable",
+        "passed_cases": 0,
+        "total_cases": 0
+      },
+      "candidates_generated": 3,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_07_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_01.c:9:30: error: use of undeclared identifier 'return0'; did you mean 'return'?\n    9 |         if ((item > 0) != 0) return0;\n      |                              ^~~~~~~\n      |                              return\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_01.c:9:30: error: non-void function 'main' should return a value [-Wreturn-mismatch]\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_01.c:13:5: error: use of undeclared identifier 'Return'\n   13 |     Return 0;\n      |     ^~~~~~\n3 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_01.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_4n0fi_9l/candidate_01"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.375,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 96,
+            "candidate_token_count": 85,
+            "code_growth_ratio": 0.8854166666666666,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_07_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_02.c:9:30: error: use of undeclared identifier 'return0'; did you mean 'return'?\n    9 |         if ((item > 0) != 0) return0;\n      |                              ^~~~~~~\n      |                              return\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_02.c:9:30: error: non-void function 'main' should return a value [-Wreturn-mismatch]\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_02.c:13:13: error: expected ';' after return statement\n   13 |     return 0);\n      |             ^\n      |             ;\n3 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_02.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_4n0fi_9l/candidate_02"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 96,
+            "candidate_token_count": 86,
+            "code_growth_ratio": 0.8958333333333334,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_07_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_03.c:9:30: error: use of undeclared identifier 'return0'; did you mean 'return'?\n    9 |         if ((item > 0) != 0) return0;\n      |                              ^~~~~~~\n      |                              return\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_03.c:9:30: error: non-void function 'main' should return a value [-Wreturn-mismatch]\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_03.c:12:36: error: expected '}'\n   12 |     printf(\"%d\\n\", positive_count);\n      |                                    ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_03.c:2:16: note: to match this '{'\n    2 | int main(void) {\n      |                ^\n3 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_07_candidate_03.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_4n0fi_9l/candidate_03"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.4,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 96,
+            "candidate_token_count": 81,
+            "code_growth_ratio": 0.84375,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_07/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_4n0fi_9l/original"
+        ]
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_08",
+      "original_path": "data/dataset_v1/program_08/original.c",
+      "candidate_path": "results/generator_a_v3/candidates/program_08_generated.c",
+      "candidate_nonempty": true,
+      "selected_candidate_index": 1,
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:6:12: error: use of undeclared identifier 'index'\n    6 |     while (index < length) {\n      |            ^~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:8:39: error: use of undeclared identifier 'highest'\n    8 |         if ((item > first_item) != 0) highest = item;\n      |                                       ^~~~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:11:11: error: expected expression\n   11 |     return\n      |           ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:11:11: error: expected '}'\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:2:16: note: to match this '{'\n    2 | int main(void) {\n      |                ^\n4 errors generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_35ym7zws/candidate_01"
+        ]
+      },
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": false,
+        "identifier_jaccard_similarity": 0.375,
+        "identifier_transformation_observed": false,
+        "control_flow_transformation_observed": false,
+        "expression_transformation_observed": false,
+        "original_token_count": 115,
+        "candidate_token_count": 73,
+        "code_growth_ratio": 0.6347826086956522,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+        "candidate_compiles": false
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Compilation failed or original/tests unavailable",
+        "passed_cases": 0,
+        "total_cases": 0
+      },
+      "candidates_generated": 4,
+      "all_candidates": [
+        {
+          "candidate_index": 1,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_08_candidate_01.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:6:12: error: use of undeclared identifier 'index'\n    6 |     while (index < length) {\n      |            ^~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:8:39: error: use of undeclared identifier 'highest'\n    8 |         if ((item > first_item) != 0) highest = item;\n      |                                       ^~~~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:11:11: error: expected expression\n   11 |     return\n      |           ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:11:11: error: expected '}'\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c:2:16: note: to match this '{'\n    2 | int main(void) {\n      |                ^\n4 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_01.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_35ym7zws/candidate_01"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.375,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 115,
+            "candidate_token_count": 73,
+            "code_growth_ratio": 0.6347826086956522,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 2,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_08_candidate_02.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_02.c:6:12: error: use of undeclared identifier 'index'\n    6 |     while (index < length) {\n      |            ^~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_02.c:8:39: error: use of undeclared identifier 'highest'\n    8 |         if ((item > first_item) != 0) highest = item;\n      |                                       ^~~~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_02.c:11:5: error: use of undeclared identifier 'return0'; did you mean 'return'?\n   11 |     return0;\n      |     ^~~~~~~\n      |     return\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_02.c:11:5: error: non-void function 'main' should return a value [-Wreturn-mismatch]\n4 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_02.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_35ym7zws/candidate_02"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.35294117647058826,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 115,
+            "candidate_token_count": 75,
+            "code_growth_ratio": 0.6521739130434783,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 3,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_08_candidate_03.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_03.c:6:12: error: use of undeclared identifier 'index'\n    6 |     while (index < length) {\n      |            ^~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_03.c:8:39: error: use of undeclared identifier 'highest'\n    8 |         if ((item > first_item) != 0) highest = item;\n      |                                       ^~~~~~~\n2 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_03.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_35ym7zws/candidate_03"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.375,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 115,
+            "candidate_token_count": 76,
+            "code_growth_ratio": 0.6608695652173913,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        },
+        {
+          "candidate_index": 4,
+          "candidate_path": "results/generator_a_v3/candidates/variants/program_08_candidate_04.c",
+          "candidate_nonempty": true,
+          "candidate_compilation": {
+            "passed": false,
+            "returncode": 1,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_04.c:6:12: error: use of undeclared identifier 'index'\n    6 |     while (index < length) {\n      |            ^~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_04.c:8:39: error: use of undeclared identifier 'highest'\n    8 |         if ((item > first_item) != 0) highest = item;\n      |                                       ^~~~~~~\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_04.c:11:5: error: use of undeclared identifier 'return0'; did you mean 'return'?\n   11 |     return0;\n      |     ^~~~~~~\n      |     return\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_04.c:11:5: error: non-void function 'main' should return a value [-Wreturn-mismatch]\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_04.c:11:13: error: expected '}'\n   11 |     return0;\n      |             ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_04.c:2:16: note: to match this '{'\n    2 | int main(void) {\n      |                ^\n5 errors generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v3/candidates/variants/program_08_candidate_04.c",
+              "-o",
+              "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_35ym7zws/candidate_04"
+            ]
+          },
+          "static_rule_proxies": {
+            "candidate_shape_proxy_pass": false,
+            "identifier_jaccard_similarity": 0.35294117647058826,
+            "identifier_transformation_observed": false,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 115,
+            "candidate_token_count": 74,
+            "code_growth_ratio": 0.6434782608695652,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates.",
+            "candidate_compiles": false
+          },
+          "semantic_differential_test": {
+            "status": "NOT_EVALUATED",
+            "reason": "Compilation failed or original/tests unavailable",
+            "passed_cases": 0,
+            "total_cases": 0
+          }
+        }
+      ],
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_08/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_v2_eval_35ym7zws/original"
+        ]
+      }
+    }
+  ],
+  "interpretation": [
+    "Each input generates several beam candidates; compiler and differential gates are run per candidate.",
+    "The selected candidate is the highest-ranked output by hard-gate results; it may still fail acceptance.",
+    "Lexical transformation checks are proxies, not AST proofs.",
+    "This five-example dataset supports pipeline debugging only, not generalization claims."
+  ]
+}

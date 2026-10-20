@@ -1,0 +1,302 @@
+{
+  "status": "EVALUATION_COMPLETED",
+  "split": "train",
+  "num_examples": 3,
+  "device": {
+    "selected_device": "mps",
+    "device_name": "Apple Metal Performance Shaders",
+    "cuda_available": false,
+    "mps_available": true
+  },
+  "base_model": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/models/base/codet5-small",
+  "adapter_path": "models/checkpoints/generator_a_lora_v1_fit/final_adapter",
+  "purpose": "overfit_diagnostic_not_generalization",
+  "generalization_claim_allowed": false,
+  "results": [
+    {
+      "split": "train",
+      "program_id": "program_01",
+      "candidate_path": "results/generator_a_v1_fit/candidates/program_01_generated.c",
+      "candidate_nonempty": true,
+      "original_path": "data/dataset_v1/program_01/original.c",
+      "device": "mps",
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": false,
+        "identifier_jaccard_similarity": 0.18181818181818182,
+        "identifier_transformation_observed": false,
+        "control_flow_transformation_observed": false,
+        "expression_transformation_observed": false,
+        "original_control_flow_keyword_count": 0,
+        "candidate_control_flow_keyword_count": 0,
+        "original_operator_count": 5,
+        "candidate_operator_count": 5,
+        "original_token_count": 40,
+        "candidate_token_count": 40,
+        "code_growth_ratio": 1.0,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical checks are preliminary proxies, not AST proofs. A valid result also requires successful compilation and differential tests.",
+        "candidate_compiles": false
+      },
+      "compiler": "/usr/bin/clang",
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_01/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_lxrnnwsk/original"
+        ]
+      },
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "t [-Wimplicit-int]\n    4 |     scanf(\"%d %d\", &lhs, &rhs);\n      |     ^\n      |     int\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:4:10: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    4 |     scanf(\"%d %d\", &lhs, &rhs);\n      |          ^                   \n      |                              void\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:5:12: error: expected parameter declarator\n    5 |     printf(\"%d\\n\", total + rhs);\n      |            ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:5:12: error: expected ')'\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:5:11: note: to match this '('\n    5 |     printf(\"%d\\n\", total + rhs);\n      |           ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:5:5: error: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]\n    5 |     printf(\"%d\\n\", total + rhs);\n      |     ^\n      |     int\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:5:11: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    5 |     printf(\"%d\\n\", total + rhs);\n      |           ^                   \n      |                               void\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:5:5: warning: incompatible redeclaration of library function 'printf' [-Wincompatible-library-redeclaration]\n    5 |     printf(\"%d\\n\", total + rhs);\n      |     ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:5:5: note: 'printf' is a builtin with type 'int (const char *, ...)'\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:6:5: error: expected identifier or '('\n    6 |     return 0;\n      |     ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c:7:1: error: extraneous closing brace ('}')\n    7 | }\n      | ^\n5 warnings and 11 errors generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_01_generated.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_lxrnnwsk/candidate"
+        ]
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Original or candidate compilation failed, or tests.json was unavailable.",
+        "passed_cases": 0,
+        "total_cases": 0
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_02",
+      "candidate_path": "results/generator_a_v1_fit/candidates/program_02_generated.c",
+      "candidate_nonempty": true,
+      "original_path": "data/dataset_v1/program_02/original.c",
+      "device": "mps",
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": true,
+        "identifier_jaccard_similarity": 0.5454545454545454,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": false,
+        "expression_transformation_observed": true,
+        "original_control_flow_keyword_count": 1,
+        "candidate_control_flow_keyword_count": 1,
+        "original_operator_count": 5,
+        "candidate_operator_count": 7,
+        "original_token_count": 55,
+        "candidate_token_count": 59,
+        "code_growth_ratio": 1.0727272727272728,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical checks are preliminary proxies, not AST proofs. A valid result also requires successful compilation and differential tests.",
+        "candidate_compiles": true
+      },
+      "compiler": "/usr/bin/clang",
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_02/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_euvns6pd/original"
+        ]
+      },
+      "candidate_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_02_generated.c:5:9: warning: unused variable 'total' [-Wunused-variable]\n    5 |     int total;\n      |         ^~~~~\n1 warning generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_02_generated.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_euvns6pd/candidate"
+        ]
+      },
+      "semantic_differential_test": {
+        "status": "FAIL",
+        "passed_cases": 0,
+        "total_cases": 4,
+        "failures": [
+          {
+            "case": 1,
+            "original": {
+              "returncode": 0,
+              "stdout": "20",
+              "stderr": "",
+              "timed_out": false
+            },
+            "candidate": {
+              "returncode": 0,
+              "stdout": "",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          {
+            "case": 2,
+            "original": {
+              "returncode": 0,
+              "stdout": "20",
+              "stderr": "",
+              "timed_out": false
+            },
+            "candidate": {
+              "returncode": 0,
+              "stdout": "10",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          {
+            "case": 3,
+            "original": {
+              "returncode": 0,
+              "stdout": "5",
+              "stderr": "",
+              "timed_out": false
+            },
+            "candidate": {
+              "returncode": 0,
+              "stdout": "",
+              "stderr": "",
+              "timed_out": false
+            }
+          },
+          {
+            "case": 4,
+            "original": {
+              "returncode": 0,
+              "stdout": "-3",
+              "stderr": "",
+              "timed_out": false
+            },
+            "candidate": {
+              "returncode": 0,
+              "stdout": "-8",
+              "stderr": "",
+              "timed_out": false
+            }
+          }
+        ],
+        "comparison": "original/candidate stdout and return code"
+      }
+    },
+    {
+      "split": "train",
+      "program_id": "program_03",
+      "candidate_path": "results/generator_a_v1_fit/candidates/program_03_generated.c",
+      "candidate_nonempty": true,
+      "original_path": "data/dataset_v1/program_03/original.c",
+      "device": "mps",
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": false,
+        "identifier_jaccard_similarity": 0.2222222222222222,
+        "identifier_transformation_observed": false,
+        "control_flow_transformation_observed": false,
+        "expression_transformation_observed": false,
+        "original_control_flow_keyword_count": 1,
+        "candidate_control_flow_keyword_count": 1,
+        "original_operator_count": 6,
+        "candidate_operator_count": 5,
+        "original_token_count": 46,
+        "candidate_token_count": 43,
+        "code_growth_ratio": 0.9347826086956522,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical checks are preliminary proxies, not AST proofs. A valid result also requires successful compilation and differential tests.",
+        "candidate_compiles": false
+      },
+      "compiler": "/usr/bin/clang",
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_03/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_qvkgh61l/original"
+        ]
+      },
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "it/candidates/program_03_generated.c:4:10: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    4 |     scanf(\"%d\", &value);\n      |          ^            \n      |                       void\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:5:5: error: expected identifier or '('\n    5 |     if (magnitude < 0) {\n      |     ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:8:12: error: expected parameter declarator\n    8 |     printf(\"%d\\n\", magnitude);\n      |            ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:8:12: error: expected ')'\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:8:11: note: to match this '('\n    8 |     printf(\"%d\\n\", magnitude);\n      |           ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:8:5: error: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]\n    8 |     printf(\"%d\\n\", magnitude);\n      |     ^\n      |     int\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:8:11: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    8 |     printf(\"%d\\n\", magnitude);\n      |           ^                 \n      |                             void\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:8:5: warning: incompatible redeclaration of library function 'printf' [-Wincompatible-library-redeclaration]\n    8 |     printf(\"%d\\n\", magnitude);\n      |     ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:8:5: note: 'printf' is a builtin with type 'int (const char *, ...)'\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:9:5: error: expected identifier or '('\n    9 |     return 0;\n      |     ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c:10:1: error: extraneous closing brace ('}')\n   10 | }\n      | ^\n5 warnings and 12 errors generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_03_generated.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_qvkgh61l/candidate"
+        ]
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Original or candidate compilation failed, or tests.json was unavailable.",
+        "passed_cases": 0,
+        "total_cases": 0
+      }
+    }
+  ],
+  "interpretation": [
+    "Candidate compilation, differential execution and lexical proxies are separate measures.",
+    "A non-compiling candidate is always marked as failing rule adherence.",
+    "A lexical transformation proxy is not an AST-level proof.",
+    "Differential tests cover only recognized cases in tests.json.",
+    "Do not claim generalization from this five-example smoke dataset."
+  ]
+}

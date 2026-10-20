@@ -1,0 +1,96 @@
+{
+  "status": "EVALUATION_COMPLETED",
+  "split": "validation",
+  "num_examples": 1,
+  "device": {
+    "selected_device": "mps",
+    "device_name": "Apple Metal Performance Shaders",
+    "cuda_available": false,
+    "mps_available": true
+  },
+  "base_model": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/models/base/codet5-small",
+  "adapter_path": "models/checkpoints/generator_a_lora_v1/final_adapter",
+  "purpose": "pipeline_smoke_test",
+  "generalization_claim_allowed": false,
+  "results": [
+    {
+      "split": "validation",
+      "program_id": "program_04",
+      "candidate_path": "results/generator_a_v1/candidates/program_04_generated.c",
+      "candidate_nonempty": true,
+      "original_path": "data/dataset_v1/program_04/original.c",
+      "device": "mps",
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": false,
+        "identifier_jaccard_similarity": 0.3333333333333333,
+        "identifier_transformation_observed": false,
+        "control_flow_transformation_observed": false,
+        "expression_transformation_observed": false,
+        "original_control_flow_keyword_count": 1,
+        "candidate_control_flow_keyword_count": 0,
+        "original_operator_count": 9,
+        "candidate_operator_count": 22,
+        "original_token_count": 62,
+        "candidate_token_count": 75,
+        "code_growth_ratio": 1.2096774193548387,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical checks are preliminary proxies, not AST proofs. A valid result also requires successful compilation and differential tests.",
+        "candidate_compiles": false
+      },
+      "compiler": "/usr/bin/clang",
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_04/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_gyqhyxz5/original"
+        ]
+      },
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1/candidates/program_04_generated.c:1:1: error: expected identifier or '('\n    1 | <stdio.h>\n      | ^\n1 error generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1/candidates/program_04_generated.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_gyqhyxz5/candidate"
+        ]
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Original or candidate compilation failed, or tests.json was unavailable.",
+        "passed_cases": 0,
+        "total_cases": 0
+      }
+    }
+  ],
+  "interpretation": [
+    "Candidate compilation, differential execution and lexical proxies are separate measures.",
+    "A non-compiling candidate is always marked as failing rule adherence.",
+    "A lexical transformation proxy is not an AST-level proof.",
+    "Differential tests cover only recognized cases in tests.json.",
+    "Do not claim generalization from this five-example smoke dataset."
+  ]
+}

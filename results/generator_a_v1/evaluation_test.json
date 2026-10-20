@@ -1,0 +1,81 @@
+{
+  "status": "EVALUATION_COMPLETED",
+  "split": "test",
+  "num_examples": 1,
+  "device": {
+    "selected_device": "mps",
+    "device_name": "Apple Metal Performance Shaders",
+    "cuda_available": false,
+    "mps_available": true
+  },
+  "base_model": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/models/base/codet5-small",
+  "adapter_path": "models/checkpoints/generator_a_lora_v1/final_adapter",
+  "purpose": "pipeline_smoke_test",
+  "generalization_claim_allowed": false,
+  "results": [
+    {
+      "split": "test",
+      "program_id": "program_05",
+      "candidate_path": "results/generator_a_v1/candidates/program_05_generated.c",
+      "candidate_nonempty": true,
+      "original_path": "data/dataset_v1/program_05/original.c",
+      "device": "mps",
+      "static_rule_proxies": {
+        "identifier_jaccard_similarity": 0.0,
+        "identifier_transformation_observed": true,
+        "control_flow_transformation_observed": true,
+        "expression_transformation_observed": true,
+        "original_control_flow_keyword_count": 1,
+        "candidate_control_flow_keyword_count": 0,
+        "original_operator_count": 9,
+        "candidate_operator_count": 0,
+        "original_token_count": 70,
+        "candidate_token_count": 49,
+        "code_growth_ratio": 0.7,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": true,
+        "methodology_note": "These are lexical proxies, not AST proofs. A changed keyword or operator count does not prove equivalent control flow or expression semantics."
+      },
+      "compiler": "/usr/bin/clang",
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_05/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_oqlhcidt/original"
+        ]
+      },
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1/candidates/program_05_generated.c:1:1: error: expected identifier or '('\n    1 | {\n      | ^\n1 error generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1/candidates/program_05_generated.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_oqlhcidt/candidate"
+        ]
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Original or candidate compilation failed, or tests.json was unavailable.",
+        "passed_cases": 0,
+        "total_cases": 0
+      }
+    }
+  ],
+  "interpretation": [
+    "Candidate compilation, differential execution and lexical rule proxies are separate measures.",
+    "A lexical transformation proxy is not an AST-level proof.",
+    "Differential tests cover only the inputs present in tests.json.",
+    "Do not claim generalization from this five-example smoke dataset."
+  ]
+}

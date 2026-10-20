@@ -1,0 +1,888 @@
+{
+  "compiler": "/usr/bin/clang",
+  "platform": "darwin",
+  "scope": "local fallback smoke test; not a proof of AST correctness or generalization",
+  "programs": [
+    {
+      "program_id": "program_01",
+      "original_path": "data/dataset_v1/program_01/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 4,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "cases_passed": 4,
+      "cases_total": 4,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "positive",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "30\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "30\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "negative",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "3\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "3\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "zero",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "mixed",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "70\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "70\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_02",
+      "original_path": "data/dataset_v1/program_02/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 4,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "cases_passed": 4,
+      "cases_total": 4,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "greater_right",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "20\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "20\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "greater_left",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "20\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "20\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "equal",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "5\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "5\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "negative",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "-3\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "-3\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_03",
+      "original_path": "data/dataset_v1/program_03/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 5,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "cases_passed": 5,
+      "cases_total": 5,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "positive",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "10\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "10\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "negative",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "10\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "10\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "zero",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "large_positive",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "37\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "37\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "large_negative",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "37\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "37\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_04",
+      "original_path": "data/dataset_v1/program_04/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 4,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "cases_passed": 4,
+      "cases_total": 4,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "zero",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "1\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "1\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "one",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "1\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "1\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "five",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "120\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "120\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "seven",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "5040\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "5040\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_05",
+      "original_path": "data/dataset_v1/program_05/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 4,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "cases_passed": 4,
+      "cases_total": 4,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "zero",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "three_values",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "6\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "6\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "mixed",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "14\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "14\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "negative_sum",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "-1\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "-1\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_06",
+      "original_path": "data/dataset_v1/program_06/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 4,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "cases_passed": 4,
+      "cases_total": 4,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "empty",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "positive_values",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "6\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "6\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "mixed_values",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "6\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "6\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "single_value",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "9\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "9\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_07",
+      "original_path": "data/dataset_v1/program_07/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 4,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "cases_passed": 4,
+      "cases_total": 4,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "empty",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "mixed",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "2\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "2\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "all_negative",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "0\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "all_positive",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "3\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "3\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_08",
+      "original_path": "data/dataset_v1/program_08/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 4,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": ""
+      },
+      "cases_passed": 4,
+      "cases_total": 4,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "single_negative",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "-4\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "-4\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "mixed",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "9\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "9\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "all_negative",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "-2\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "-2\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        },
+        {
+          "case": "strictly_increasing",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "4\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "4\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_09",
+      "original_path": "data/dataset_v1/program_09/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 1,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_09/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int a[5] = {1, 2, 3, 4, 5}; int sum = 0; for(int i=0; i<5; i++) sum += a[i]; return sum; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/fallback_program_09_0svsn7nl/candidate.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int v_alpha[5] = {1, 2, 3, 4, 5}; int accum_sum = 0; for(int idx_iter=0; idx_iter<5; idx_iter++) accum_sum += v_alpha[idx_iter]; return accum_sum; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "cases_passed": 1,
+      "cases_total": 1,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "1",
+          "passed": true,
+          "original": {
+            "returncode": 15,
+            "stdout": "",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 15,
+            "stdout": "",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_10",
+      "original_path": "data/dataset_v1/program_10/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 1,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_10/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int x = 10, y = 20; if (x < y) return x; else return y; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/fallback_program_10_v2p3fb2m/candidate.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int x = 10, y = 20; if (x < y) return x; else return y; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "cases_passed": 1,
+      "cases_total": 1,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "1",
+          "passed": true,
+          "original": {
+            "returncode": 10,
+            "stdout": "",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 10,
+            "stdout": "",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_11",
+      "original_path": "data/dataset_v1/program_11/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 1,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_11/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int fact = 1; for(int i=1; i<=5; i++) fact *= i; return fact; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/fallback_program_11_rpgysthx/candidate.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int accum_fact = 1; for(int idx_iter=1; idx_iter<=5; idx_iter++) accum_fact *= idx_iter; return accum_fact; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "cases_passed": 1,
+      "cases_total": 1,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "1",
+          "passed": true,
+          "original": {
+            "returncode": 120,
+            "stdout": "",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 120,
+            "stdout": "",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_12",
+      "original_path": "data/dataset_v1/program_12/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 1,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_12/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int n = 5; int f = 1; for(int i = 1; i <= n; i++) { f = f * i; } printf(\"%d\\n\", f); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/fallback_program_12_h8bl4zlj/candidate.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int n = 5; int f = 1; for(int idx_iter = 1; idx_iter <= n; idx_iter++) { f = f * idx_iter; } printf(\"%d\\n\", f); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "cases_passed": 1,
+      "cases_total": 1,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "1",
+          "passed": true,
+          "original": {
+            "returncode": 0,
+            "stdout": "120\n",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 0,
+            "stdout": "120\n",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    },
+    {
+      "program_id": "program_13",
+      "original_path": "data/dataset_v1/program_13/original.c",
+      "fallback_nonempty": true,
+      "test_case_count": 1,
+      "original_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_13/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int count = 0; for(int i = 0; i < 10; i++) { count++; } return count; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "candidate_compile": {
+        "passed": true,
+        "returncode": 0,
+        "stderr": "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/fallback_program_13_2_slpxsy/candidate.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int total_cnt = 0; for(int idx_iter = 0; idx_iter < 10; idx_iter++) { total_cnt++; } return total_cnt; }\n      |         ^\n      |          void\n1 warning generated.\n"
+      },
+      "cases_passed": 1,
+      "cases_total": 1,
+      "behavior_status": "PASS",
+      "case_results": [
+        {
+          "case": "1",
+          "passed": true,
+          "original": {
+            "returncode": 10,
+            "stdout": "",
+            "stderr": "",
+            "timed_out": false
+          },
+          "candidate": {
+            "returncode": 10,
+            "stdout": "",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ]
+    }
+  ]
+}

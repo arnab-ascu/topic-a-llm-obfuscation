@@ -1,0 +1,96 @@
+{
+  "status": "EVALUATION_COMPLETED",
+  "split": "validation",
+  "num_examples": 1,
+  "device": {
+    "selected_device": "mps",
+    "device_name": "Apple Metal Performance Shaders",
+    "cuda_available": false,
+    "mps_available": true
+  },
+  "base_model": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/models/base/codet5-small",
+  "adapter_path": "models/checkpoints/generator_a_lora_v1_fit/final_adapter",
+  "purpose": "overfit_diagnostic_not_generalization",
+  "generalization_claim_allowed": false,
+  "results": [
+    {
+      "split": "validation",
+      "program_id": "program_04",
+      "candidate_path": "results/generator_a_v1_fit/candidates/program_04_generated.c",
+      "candidate_nonempty": true,
+      "original_path": "data/dataset_v1/program_04/original.c",
+      "device": "mps",
+      "static_rule_proxies": {
+        "candidate_shape_proxy_pass": false,
+        "identifier_jaccard_similarity": 0.3333333333333333,
+        "identifier_transformation_observed": false,
+        "control_flow_transformation_observed": false,
+        "expression_transformation_observed": false,
+        "original_control_flow_keyword_count": 1,
+        "candidate_control_flow_keyword_count": 0,
+        "original_operator_count": 9,
+        "candidate_operator_count": 1,
+        "original_token_count": 62,
+        "candidate_token_count": 61,
+        "code_growth_ratio": 0.9838709677419355,
+        "max_code_growth_ratio": 2.0,
+        "code_growth_limit_pass": true,
+        "required_rules": [
+          "identifier_transformation",
+          "control_flow_transformation",
+          "expression_transformation"
+        ],
+        "unknown_required_rules": [],
+        "rule_adherence_proxy_pass": false,
+        "methodology_note": "Lexical checks are preliminary proxies, not AST proofs. A valid result also requires successful compilation and differential tests.",
+        "candidate_compiles": false
+      },
+      "compiler": "/usr/bin/clang",
+      "original_compilation": {
+        "passed": true,
+        "returncode": 0,
+        "stdout": "",
+        "stderr": "",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_04/original.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_ic6sbecs/original"
+        ]
+      },
+      "candidate_compilation": {
+        "passed": false,
+        "returncode": 1,
+        "stdout": "",
+        "stderr": "/candidates/program_04_generated.c:2:5: note: 'printf' is a builtin with type 'int (const char *, ...)'\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:3:5: error: expected identifier or '('\n    3 |     return result;\n      |     ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:4:5: error: extraneous closing brace ('}')\n    4 |     }\n      |     ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:8:12: error: expected parameter declarator\n    8 |     printf(\"%d\\n\", result);\n      |            ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:8:12: error: expected ')'\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:8:11: note: to match this '('\n    8 |     printf(\"%d\\n\", result);\n      |           ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:8:5: error: type specifier missing, defaults to 'int'; ISO C99 and later do not support implicit int [-Wimplicit-int]\n    8 |     printf(\"%d\\n\", result);\n      |     ^\n      |     int\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:8:11: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    8 |     printf(\"%d\\n\", result);\n      |           ^              \n      |                          void\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:9:5: error: extraneous closing brace ('}')\n    9 |     }\n      |     ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:10:9: error: redefinition of 'main'\n   10 |     int main(void) {\n      |         ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:5:9: note: previous definition is here\n    5 |     int main(void) {\n      |         ^\n/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c:17:19: error: expected function body after function declarator\n   17 |     int main(void)\n      |                   ^\n3 warnings and 11 errors generated.\n",
+        "command": [
+          "/usr/bin/clang",
+          "-std=c11",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_v1_fit/candidates/program_04_generated.c",
+          "-o",
+          "/var/folders/py/2gtdffh17hd3gx5lx43h_dc40000gn/T/generator_a_eval_ic6sbecs/candidate"
+        ]
+      },
+      "semantic_differential_test": {
+        "status": "NOT_EVALUATED",
+        "reason": "Original or candidate compilation failed, or tests.json was unavailable.",
+        "passed_cases": 0,
+        "total_cases": 0
+      }
+    }
+  ],
+  "interpretation": [
+    "Candidate compilation, differential execution and lexical proxies are separate measures.",
+    "A non-compiling candidate is always marked as failing rule adherence.",
+    "A lexical transformation proxy is not an AST-level proof.",
+    "Differential tests cover only recognized cases in tests.json.",
+    "Do not claim generalization from this five-example smoke dataset."
+  ]
+}

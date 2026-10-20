@@ -1,0 +1,65 @@
+{
+  "created_at_utc": "2026-10-09T19:26:40.352529+00:00",
+  "purpose": "pipeline_smoke_test",
+  "generalization_claim_allowed": false,
+  "dataset_counts": {
+    "train": 3,
+    "validation": 1,
+    "test": 1
+  },
+  "dataset_sha256": {
+    "train": "97650d7598692bd7727322356b7d2d4780b9db22aef9992dcceaa85e90371d01",
+    "validation": "6a35ce630e67f888e2fd5d27eeda1501a6d5de75a5d7d70f575193e010e83a53",
+    "test": "24da8c2a6fc54633a758672a0e163d9a3c1bf9bfd31fd05fae6c36e0830c2bc8"
+  },
+  "config_sha256": "429ce4d6101314390c7d378a81d74ad1d167762d49fd08665fd317420835e956",
+  "specification_sha256": "600ccb4eacd288e9c8c3755dd62a9c74714a344721a1f80234d0096a88e3a6fb",
+  "model_path": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/models/base/codet5-small",
+  "git_commit": "a79aff971664d400e188cd4861341d054d9b6dae",
+  "python_version": "3.12.15 (main, Sep 30 2026, 22:04:19) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "torch_version": "2.14.1",
+  "transformers_version": "4.57.1",
+  "peft_version": "0.21.2",
+  "accelerate_version": "1.15.0",
+  "selected_device": "mps",
+  "device_name": "Apple Metal Performance Shaders",
+  "cuda_available": false,
+  "mps_available": true,
+  "token_length_report": {
+    "train": {
+      "source_token_lengths": [
+        388,
+        413,
+        398
+      ],
+      "target_token_lengths": [
+        109,
+        114,
+        79
+      ]
+    },
+    "validation": {
+      "source_token_lengths": [
+        414
+      ],
+      "target_token_lengths": [
+        92
+      ]
+    },
+    "test": {
+      "source_token_lengths": [
+        427
+      ],
+      "target_token_lengths": [
+        107
+      ]
+    }
+  },
+  "status": "PREFLIGHT_PASSED",
+  "notes": [
+    "No model weights were fine-tuned during preflight.",
+    "Validation and test examples are not used for gradient updates.",
+    "Dataset is too small for a generalization claim."
+  ]
+}
