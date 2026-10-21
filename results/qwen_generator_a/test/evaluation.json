@@ -1,0 +1,162 @@
+{
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "backend": "qwen",
+  "split": "test",
+  "dataset": null,
+  "compiler": "/usr/bin/clang",
+  "compiler_flags": [
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic"
+  ],
+  "program_count": 1,
+  "accepted_count": 1,
+  "records": [
+    {
+      "program_id": "program_05",
+      "selected_candidate": "qwen_repaired",
+      "accepted": true,
+      "attempts": [
+        {
+          "candidate_name": "qwen",
+          "candidate_path": "results/qwen_generator_a/test/candidates/program_05_qwen.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_05/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/qwen_generator_a/test/executables/program_05_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/qwen_generator_a/test/candidates/program_05_qwen.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/qwen_generator_a/test/executables/program_05_qwen"
+            ]
+          },
+          "rule_checks": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5384615384615384,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": false,
+            "expression_transformation_observed": false,
+            "original_token_count": 70,
+            "candidate_token_count": 70,
+            "code_growth_ratio": 1.0,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": false,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 4,
+            "total_cases": 4,
+            "failures": [],
+            "comparison": "normalized stdout and return code; stderr is recorded but not compared"
+          },
+          "accepted": false
+        },
+        {
+          "candidate_name": "qwen_repaired",
+          "candidate_path": "results/qwen_generator_a/test/candidates/program_05_qwen_repaired.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_v1/program_05/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/qwen_generator_a/test/executables/program_05_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/qwen_generator_a/test/candidates/program_05_qwen_repaired.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/qwen_generator_a/test/executables/program_05_qwen_repaired"
+            ]
+          },
+          "rule_checks": {
+            "candidate_shape_proxy_pass": true,
+            "identifier_jaccard_similarity": 0.5384615384615384,
+            "identifier_transformation_observed": true,
+            "control_flow_transformation_observed": true,
+            "expression_transformation_observed": true,
+            "original_token_count": 70,
+            "candidate_token_count": 75,
+            "code_growth_ratio": 1.0714285714285714,
+            "max_code_growth_ratio": 2.0,
+            "code_growth_limit_pass": true,
+            "required_rules": [
+              "identifier_transformation",
+              "control_flow_transformation",
+              "expression_transformation"
+            ],
+            "unknown_required_rules": [],
+            "rule_adherence_proxy_pass": true,
+            "methodology_note": "Lexical proxies are not AST proofs; compilation and differential testing are independent gates."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 4,
+            "total_cases": 4,
+            "failures": [],
+            "comparison": "normalized stdout and return code; stderr is recorded but not compared"
+          },
+          "accepted": true,
+          "repair_steps": [
+            "expanded simple compound assignment +=",
+            "rewrote canonical for-loop to while-loop"
+          ]
+        }
+      ],
+      "note": "Acceptance uses compilation, lexical transformation proxies, and differential tests. The lexical proxies are not AST-level proof."
+    }
+  ],
+  "limitations": [
+    "Lexical rule proxies are not AST proofs.",
+    "Differential tests only cover the inputs in each program's tests.json.",
+    "A fallback-only run is not a Qwen-model evaluation."
+  ]
+}

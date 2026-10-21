@@ -38,6 +38,7 @@ SYSTEM_PROMPT = (
 try:
     from src.models.evaluate_generator_a import static_rule_proxies
     from src.models.hybrid_fallback import apply_ast_fallback_obfuscation
+    from src.models.required_transformations import apply_required_transformations
 except ImportError as exc:
     raise ImportError(
         "Run this module from the repository root with "
@@ -281,8 +282,8 @@ def load_qwen(adapter_path: Path):
 
     model_id = MODEL_ID
     device = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
-    tokenizer_source = str(adapter_path) if (adapter_path / "tokenizer_config.json").is_file() else model_id
-    tokenizer = AutoTokenizer.from_pretrained(tokenizer_source, use_fast=True)
+    # Load canonical base tokenizer: the adapter bundle tokenizer_config may be incompatible with this Transformers version.
+    tokenizer = AutoTokenizer.from_pretrained(model_id, use_fast=True)
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
@@ -394,6 +395,17 @@ def evaluate(args: argparse.Namespace) -> int:
                 compiler_flags, specification, output_dir,
             )
             attempts.append(neural_result)
+
+            # Keep raw model output for comparison; evaluate deterministic repair separately.
+            if not neural_result["accepted"]:
+                repaired_code, repair_steps = apply_required_transformations(neural_code)
+                if repaired_code.strip() and repaired_code.strip() != neural_code.strip():
+                    repaired_result = assess_candidate(
+                        program_id, "qwen_repaired", repaired_code, original_path, tests,
+                        compiler, compiler_flags, specification, output_dir,
+                    )
+                    repaired_result["repair_steps"] = repair_steps
+                    attempts.append(repaired_result)
 
         if backend == "fallback" or not any(item["accepted"] for item in attempts):
             fallback_code = apply_ast_fallback_obfuscation(
