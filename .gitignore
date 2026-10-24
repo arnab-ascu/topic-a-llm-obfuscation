@@ -19,3 +19,14 @@ __pycache__/
 
 # Local compiled executable
 /data/sample/hello.exe
+# Executables & Binaries
+*.exe
+*.zip
+
+# Temporary Evaluation Artifacts
+results/*_tmp/
+
+# Local Model Checkpoints & Adapters
+models/checkpoints/
+models/ml_evaluators/
+
