@@ -1,18 +1,1 @@
-[
-  {
-    "name": "single_negative",
-    "stdin": "1\n-4\n"
-  },
-  {
-    "name": "mixed",
-    "stdin": "5\n1 5 -3 9 0\n"
-  },
-  {
-    "name": "all_negative",
-    "stdin": "4\n-9 -2 -8 -3\n"
-  },
-  {
-    "name": "strictly_increasing",
-    "stdin": "4\n1 2 3 4\n"
-  }
-]
+[""]

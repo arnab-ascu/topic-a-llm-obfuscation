@@ -1,15 +1,2 @@
 #include <stdio.h>
-int main(void) {
-    int length;
-    if (scanf("%d", &length) != 1 || length < 0) return 0;
-    int positive_count = 0;
-    int index = 0;
-    while (index < length) {
-        int item;
-        if (scanf("%d", &item) != 1) return 0;
-        positive_count = positive_count + ((item > 0) ? 1 : 0);
-        ++index;
-    }
-    printf("%d\n", positive_count);
-    return 0;
-}
+int main() { int v1 = 1; int v2 = 2; int v3 = 3; int res = (v1 * v2) * v3; printf("%d\n", res); return 0; }

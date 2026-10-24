@@ -42,3 +42,9 @@ results/*_tmp/
 models/checkpoints/
 models/ml_evaluators/
 
+
+# Evaluation Results & Checkpoints
+results/generator_a_v6_rtx/
+results/generator_a_v7_rtx/
+results/*_tmp/
+

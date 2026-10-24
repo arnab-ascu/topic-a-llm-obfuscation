@@ -1,13 +1,2 @@
 #include <stdio.h>
-int main(void) {
-    int lhs, rhs;
-    scanf("%d %d", &lhs, &rhs);
-    int total;
-    if ((lhs | rhs) == (lhs | rhs)) {
-        total = lhs - (-rhs);
-    } else {
-        total = lhs - (-rhs);
-    }
-    printf("%d\n", total);
-    return 0;
-}
+int main() { int x = 5; int y = 10; int z = x + y; printf("%d\n", z); return 0; }

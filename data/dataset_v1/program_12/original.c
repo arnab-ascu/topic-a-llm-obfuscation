@@ -1,2 +1,2 @@
 #include <stdio.h>
-int main() { int n = 5; int f = 1; for(int i = 1; i <= n; i++) { f = f * i; } printf("%d\n", f); return 0; }
+int main() { int n = 5; int f = 1; for(int i = 1; i <= n; i++) { f = f * i; } return f; }
