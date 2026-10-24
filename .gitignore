@@ -30,3 +30,15 @@ results/*_tmp/
 models/checkpoints/
 models/ml_evaluators/
 
+
+# Executables & Archives
+*.exe
+*.zip
+
+# Temporary Evaluation Outputs
+results/*_tmp/
+
+# Local Model Weights
+models/checkpoints/
+models/ml_evaluators/
+
