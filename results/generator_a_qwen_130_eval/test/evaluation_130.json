@@ -1,0 +1,2665 @@
+{
+  "model": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+  "adapter_path": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/models/checkpoints/qwen_130_adapter_incoming",
+  "split": "held_out_test",
+  "split_file": "data/training_expanded/test_130.jsonl",
+  "program_count": 24,
+  "accepted_count": 24,
+  "category_summary": {
+    "loop": {
+      "count": 5,
+      "accepted": 5
+    },
+    "cond": {
+      "count": 5,
+      "accepted": 5
+    },
+    "arr": {
+      "count": 7,
+      "accepted": 7
+    },
+    "math": {
+      "count": 7,
+      "accepted": 7
+    }
+  },
+  "records": [
+    {
+      "program_id": "prog_loop_026",
+      "category": "loop",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_loop_026",
+          "category": "loop",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_loop_026_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_026/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int sum = 0; int n = 130; for(int idx=0; idx<n; idx++) sum += (idx * 26); printf(\"%d\\n\", sum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_026/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_026_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_026_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int accum = 0; int idx = 0; int limit = 130; while(idx < limit) { accum += (idx * 26); idx++; } printf(\"%d\\n\", accum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_026_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_026_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 8,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.6,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "loop",
+            "rule": "loop-control-form change matching reference transformation",
+            "original_loop_kinds": [
+              "for"
+            ],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "218010",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "218010",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_loop_027",
+      "category": "loop",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_loop_027",
+          "category": "loop",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_loop_027_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_027/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int sum = 0; int n = 135; for(int idx=0; idx<n; idx++) sum += (idx * 27); printf(\"%d\\n\", sum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_027/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_027_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_027_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int accum = 0; int idx = 0; int limit = 135; while(idx < limit) { accum += (idx * 27); idx++; } printf(\"%d\\n\", accum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_027_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_027_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 8,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.6,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "loop",
+            "rule": "loop-control-form change matching reference transformation",
+            "original_loop_kinds": [
+              "for"
+            ],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "244215",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "244215",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_loop_028",
+      "category": "loop",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_loop_028",
+          "category": "loop",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_loop_028_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_028/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int sum = 0; int n = 140; for(int idx=0; idx<n; idx++) sum += (idx * 28); printf(\"%d\\n\", sum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_028/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_028_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_028_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int accum = 0; int idx = 0; int limit = 140; while(idx < limit) { accum += (idx * 28); idx++; } printf(\"%d\\n\", accum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_028_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_028_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 8,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.6,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "loop",
+            "rule": "loop-control-form change matching reference transformation",
+            "original_loop_kinds": [
+              "for"
+            ],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "272440",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "272440",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_loop_029",
+      "category": "loop",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_loop_029",
+          "category": "loop",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_loop_029_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_029/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int sum = 0; int n = 145; for(int idx=0; idx<n; idx++) sum += (idx * 29); printf(\"%d\\n\", sum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_029/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_029_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_029_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int accum = 0; int idx = 0; int limit = 145; while(idx < limit) { accum += (idx * 29); idx++; } printf(\"%d\\n\", accum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_029_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_029_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 8,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.6,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "loop",
+            "rule": "loop-control-form change matching reference transformation",
+            "original_loop_kinds": [
+              "for"
+            ],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "302760",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "302760",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_loop_030",
+      "category": "loop",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_loop_030",
+          "category": "loop",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_loop_030_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_030/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int sum = 0; int n = 150; for(int idx=0; idx<n; idx++) sum += (idx * 30); printf(\"%d\\n\", sum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_loop_030/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_030_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_030_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int accum = 0; int idx = 0; int limit = 150; while(idx < limit) { accum += (idx * 30); idx++; } printf(\"%d\\n\", accum); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_loop_030_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_loop_030_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 8,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.6,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "loop",
+            "rule": "loop-control-form change matching reference transformation",
+            "original_loop_kinds": [
+              "for"
+            ],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "335250",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "335250",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_cond_026",
+      "category": "cond",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_cond_026",
+          "category": "cond",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_cond_026_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_026/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int x = 78; if (x > 52) printf(\"ABOVE\\n\"); else printf(\"BELOW\\n\"); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_026/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_026_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_026_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int val = 78; int thresh = 52; int res = (val > thresh) ? 1 : 0; if (res == 1) { printf(\"ABOVE\\n\"); } else { printf(\"BELOW\\n\"); } return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_026_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_026_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.5555555555555556,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "cond",
+            "rule": "conditional-expression rewrite matching reference transformation",
+            "original_ternary_count": 0,
+            "reference_ternary_count": 1,
+            "candidate_ternary_count": 1,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_cond_027",
+      "category": "cond",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_cond_027",
+          "category": "cond",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_cond_027_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_027/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int x = 81; if (x > 54) printf(\"ABOVE\\n\"); else printf(\"BELOW\\n\"); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_027/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_027_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_027_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int val = 81; int thresh = 54; int res = (val > thresh) ? 1 : 0; if (res == 1) { printf(\"ABOVE\\n\"); } else { printf(\"BELOW\\n\"); } return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_027_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_027_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.5555555555555556,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "cond",
+            "rule": "conditional-expression rewrite matching reference transformation",
+            "original_ternary_count": 0,
+            "reference_ternary_count": 1,
+            "candidate_ternary_count": 1,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_cond_028",
+      "category": "cond",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_cond_028",
+          "category": "cond",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_cond_028_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_028/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int x = 84; if (x > 56) printf(\"ABOVE\\n\"); else printf(\"BELOW\\n\"); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_028/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_028_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_028_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int val = 84; int thresh = 56; int res = (val > thresh) ? 1 : 0; if (res == 1) { printf(\"ABOVE\\n\"); } else { printf(\"BELOW\\n\"); } return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_028_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_028_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.5555555555555556,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "cond",
+            "rule": "conditional-expression rewrite matching reference transformation",
+            "original_ternary_count": 0,
+            "reference_ternary_count": 1,
+            "candidate_ternary_count": 1,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_cond_029",
+      "category": "cond",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_cond_029",
+          "category": "cond",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_cond_029_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_029/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int x = 87; if (x > 58) printf(\"ABOVE\\n\"); else printf(\"BELOW\\n\"); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_029/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_029_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_029_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int val = 87; int thresh = 58; int res = (val > thresh) ? 1 : 0; if (res == 1) { printf(\"ABOVE\\n\"); } else { printf(\"BELOW\\n\"); } return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_029_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_029_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.5555555555555556,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "cond",
+            "rule": "conditional-expression rewrite matching reference transformation",
+            "original_ternary_count": 0,
+            "reference_ternary_count": 1,
+            "candidate_ternary_count": 1,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_cond_030",
+      "category": "cond",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_cond_030",
+          "category": "cond",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_cond_030_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_030/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int x = 90; if (x > 60) printf(\"ABOVE\\n\"); else printf(\"BELOW\\n\"); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_cond_030/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_030_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_030_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int val = 90; int thresh = 60; int res = (val > thresh) ? 1 : 0; if (res == 1) { printf(\"ABOVE\\n\"); } else { printf(\"BELOW\\n\"); } return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_cond_030_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_cond_030_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 8,
+            "jaccard_similarity": 0.5555555555555556,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "cond",
+            "rule": "conditional-expression rewrite matching reference transformation",
+            "original_ternary_count": 0,
+            "reference_ternary_count": 1,
+            "candidate_ternary_count": 1,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "ABOVE",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_arr_029",
+      "category": "arr",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_arr_029",
+          "category": "arr",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_arr_029_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_029/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int arr[4] = {29, 30, 31, 32}; printf(\"%d\\n\", arr[0] + arr[3]); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_029/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_029_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_029_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int vec[4] = {29, 30, 31, 32}; int *ptr = vec; printf(\"%d\\n\", *(ptr + 0) + *(ptr + 3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_029_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_029_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 7,
+            "jaccard_similarity": 0.625,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "arr",
+            "rule": "pointer-arithmetic rewrite matching reference transformation",
+            "reference_uses_pointer_arithmetic": true,
+            "candidate_uses_pointer_arithmetic": true,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "61",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "61",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_arr_030",
+      "category": "arr",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_arr_030",
+          "category": "arr",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_arr_030_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_030/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int arr[4] = {30, 31, 32, 33}; printf(\"%d\\n\", arr[0] + arr[3]); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_030/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_030_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_030_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int vec[4] = {30, 31, 32, 33}; int *ptr = vec; printf(\"%d\\n\", *(ptr + 0) + *(ptr + 3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_030_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_030_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 7,
+            "jaccard_similarity": 0.625,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "arr",
+            "rule": "pointer-arithmetic rewrite matching reference transformation",
+            "reference_uses_pointer_arithmetic": true,
+            "candidate_uses_pointer_arithmetic": true,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "63",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "63",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_arr_031",
+      "category": "arr",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_arr_031",
+          "category": "arr",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_arr_031_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_031/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int arr[4] = {31, 32, 33, 34}; printf(\"%d\\n\", arr[0] + arr[3]); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_031/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_031_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_031_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int vec[4] = {31, 32, 33, 34}; int *ptr = vec; printf(\"%d\\n\", *(ptr + 0) + *(ptr + 3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_031_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_031_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 7,
+            "jaccard_similarity": 0.625,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "arr",
+            "rule": "pointer-arithmetic rewrite matching reference transformation",
+            "reference_uses_pointer_arithmetic": true,
+            "candidate_uses_pointer_arithmetic": true,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "65",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "65",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_arr_032",
+      "category": "arr",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_arr_032",
+          "category": "arr",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_arr_032_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_032/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int arr[4] = {32, 33, 34, 35}; printf(\"%d\\n\", arr[0] + arr[3]); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_032/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_032_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_032_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int vec[4] = {32, 33, 34, 35}; int *ptr = vec; printf(\"%d\\n\", *(ptr + 0) + *(ptr + 3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_032_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_032_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 7,
+            "jaccard_similarity": 0.625,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "arr",
+            "rule": "pointer-arithmetic rewrite matching reference transformation",
+            "reference_uses_pointer_arithmetic": true,
+            "candidate_uses_pointer_arithmetic": true,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "67",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "67",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_arr_033",
+      "category": "arr",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_arr_033",
+          "category": "arr",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_arr_033_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_033/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int arr[4] = {33, 34, 35, 36}; printf(\"%d\\n\", arr[0] + arr[3]); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_033/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_033_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_033_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int vec[4] = {33, 34, 35, 36}; int *ptr = vec; printf(\"%d\\n\", *(ptr + 0) + *(ptr + 3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_033_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_033_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 7,
+            "jaccard_similarity": 0.625,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "arr",
+            "rule": "pointer-arithmetic rewrite matching reference transformation",
+            "reference_uses_pointer_arithmetic": true,
+            "candidate_uses_pointer_arithmetic": true,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "69",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "69",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_arr_034",
+      "category": "arr",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_arr_034",
+          "category": "arr",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_arr_034_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_034/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int arr[4] = {34, 35, 36, 37}; printf(\"%d\\n\", arr[0] + arr[3]); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_034/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_034_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_034_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int vec[4] = {34, 35, 36, 37}; int *ptr = vec; printf(\"%d\\n\", *(ptr + 0) + *(ptr + 3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_034_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_034_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 7,
+            "jaccard_similarity": 0.625,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "arr",
+            "rule": "pointer-arithmetic rewrite matching reference transformation",
+            "reference_uses_pointer_arithmetic": true,
+            "candidate_uses_pointer_arithmetic": true,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "71",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "71",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_arr_035",
+      "category": "arr",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_arr_035",
+          "category": "arr",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_arr_035_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_035/original.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int arr[4] = {35, 36, 37, 38}; printf(\"%d\\n\", arr[0] + arr[3]); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_arr_035/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_035_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_035_raw.c:2:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    2 | int main() { int vec[4] = {35, 36, 37, 38}; int *ptr = vec; printf(\"%d\\n\", *(ptr + 0) + *(ptr + 3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_arr_035_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_arr_035_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 6,
+            "candidate_identifier_count": 7,
+            "jaccard_similarity": 0.625,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "arr",
+            "rule": "pointer-arithmetic rewrite matching reference transformation",
+            "reference_uses_pointer_arithmetic": true,
+            "candidate_uses_pointer_arithmetic": true,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "73",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "73",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        }
+      ]
+    },
+    {
+      "program_id": "prog_math_029",
+      "category": "math",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_math_029",
+          "category": "math",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_029_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_029/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(5)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_029/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_029_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_029_raw.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(5)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_029_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_029_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "120",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "120",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        },
+        {
+          "program_id": "prog_math_029",
+          "category": "math",
+          "candidate_name": "repaired",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_029_repaired.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_029/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(5)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_029/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_029_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_029_repaired.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(5)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_029_repaired.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_029_repaired"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "120",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "120",
+              "stderr": ""
+            }
+          },
+          "accepted": true,
+          "repair_steps": [
+            "expanded simple compound assignment *="
+          ]
+        }
+      ]
+    },
+    {
+      "program_id": "prog_math_030",
+      "category": "math",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_math_030",
+          "category": "math",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_030_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_030/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(1)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_030/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_030_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_030_raw.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(1)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_030_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_030_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "1",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "1",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        },
+        {
+          "program_id": "prog_math_030",
+          "category": "math",
+          "candidate_name": "repaired",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_030_repaired.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_030/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(1)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_030/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_030_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_030_repaired.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(1)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_030_repaired.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_030_repaired"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "1",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "1",
+              "stderr": ""
+            }
+          },
+          "accepted": true,
+          "repair_steps": [
+            "expanded simple compound assignment *="
+          ]
+        }
+      ]
+    },
+    {
+      "program_id": "prog_math_031",
+      "category": "math",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_math_031",
+          "category": "math",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_031_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_031/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(2)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_031/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_031_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_031_raw.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(2)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_031_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_031_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "2",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "2",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        },
+        {
+          "program_id": "prog_math_031",
+          "category": "math",
+          "candidate_name": "repaired",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_031_repaired.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_031/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(2)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_031/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_031_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_031_repaired.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(2)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_031_repaired.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_031_repaired"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "2",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "2",
+              "stderr": ""
+            }
+          },
+          "accepted": true,
+          "repair_steps": [
+            "expanded simple compound assignment *="
+          ]
+        }
+      ]
+    },
+    {
+      "program_id": "prog_math_032",
+      "category": "math",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_math_032",
+          "category": "math",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_032_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_032/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_032/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_032_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_032_raw.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_032_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_032_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "6",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "6",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        },
+        {
+          "program_id": "prog_math_032",
+          "category": "math",
+          "candidate_name": "repaired",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_032_repaired.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_032/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_032/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_032_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_032_repaired.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(3)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_032_repaired.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_032_repaired"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "6",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "6",
+              "stderr": ""
+            }
+          },
+          "accepted": true,
+          "repair_steps": [
+            "expanded simple compound assignment *="
+          ]
+        }
+      ]
+    },
+    {
+      "program_id": "prog_math_033",
+      "category": "math",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_math_033",
+          "category": "math",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_033_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_033/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(4)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_033/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_033_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_033_raw.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(4)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_033_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_033_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "24",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "24",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        },
+        {
+          "program_id": "prog_math_033",
+          "category": "math",
+          "candidate_name": "repaired",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_033_repaired.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_033/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(4)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_033/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_033_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_033_repaired.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(4)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_033_repaired.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_033_repaired"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "24",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "24",
+              "stderr": ""
+            }
+          },
+          "accepted": true,
+          "repair_steps": [
+            "expanded simple compound assignment *="
+          ]
+        }
+      ]
+    },
+    {
+      "program_id": "prog_math_034",
+      "category": "math",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_math_034",
+          "category": "math",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_034_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_034/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(5)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_034/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_034_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_034_raw.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(5)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_034_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_034_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "120",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "120",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        },
+        {
+          "program_id": "prog_math_034",
+          "category": "math",
+          "candidate_name": "repaired",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_034_repaired.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_034/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(5)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_034/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_034_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_034_repaired.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(5)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_034_repaired.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_034_repaired"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "120",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "120",
+              "stderr": ""
+            }
+          },
+          "accepted": true,
+          "repair_steps": [
+            "expanded simple compound assignment *="
+          ]
+        }
+      ]
+    },
+    {
+      "program_id": "prog_math_035",
+      "category": "math",
+      "selected_candidate": "raw",
+      "accepted": true,
+      "attempts": [
+        {
+          "program_id": "prog_math_035",
+          "category": "math",
+          "candidate_name": "raw",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_035_raw.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_035/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(1)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_035/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_035_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_035_raw.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(1)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_035_raw.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_035_raw"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "1",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "1",
+              "stderr": ""
+            }
+          },
+          "accepted": true
+        },
+        {
+          "program_id": "prog_math_035",
+          "category": "math",
+          "candidate_name": "repaired",
+          "candidate_path": "results/generator_a_qwen_130_eval/test/candidates/prog_math_035_repaired.c",
+          "original_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_035/original.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", fact(1)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/data/dataset_expanded/prog_math_035/original.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_035_original"
+            ]
+          },
+          "candidate_compile": {
+            "passed": true,
+            "returncode": 0,
+            "stdout": "",
+            "stderr": "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_035_repaired.c:3:9: warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]\n    3 | int main() { printf(\"%d\\n\", compute_fact(1)); return 0; }\n      |         ^\n      |          void\n1 warning generated.\n",
+            "command": [
+              "/usr/bin/clang",
+              "-std=c11",
+              "-Wall",
+              "-Wextra",
+              "-Wpedantic",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/candidates/prog_math_035_repaired.c",
+              "-o",
+              "/Users/arnabbanik/Projects/topic-a-llm-obfuscation/results/generator_a_qwen_130_eval/test/executables/prog_math_035_repaired"
+            ]
+          },
+          "shape_proxy_pass": true,
+          "identifier_transformation": {
+            "original_identifier_count": 7,
+            "candidate_identifier_count": 9,
+            "jaccard_similarity": 0.45454545454545453,
+            "passed": true
+          },
+          "category_transformation": {
+            "category": "math",
+            "rule": "recursive/conditional math rewrite toward iterative reference",
+            "original_loop_kinds": [],
+            "reference_loop_kinds": [
+              "while"
+            ],
+            "candidate_loop_kinds": [
+              "while"
+            ],
+            "original_ternary_count": 1,
+            "reference_ternary_count": 0,
+            "candidate_ternary_count": 0,
+            "passed": true,
+            "methodology_note": "Category-specific lexical proxies are inferred from each dataset category's stored positive.c pattern; they are not AST proofs."
+          },
+          "behavior": {
+            "status": "PASS",
+            "passed_cases": 1,
+            "total_cases": 1,
+            "input": "",
+            "comparison": "stdout and return code under empty stdin",
+            "original": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "1",
+              "stderr": ""
+            },
+            "candidate": {
+              "timeout": false,
+              "returncode": 0,
+              "stdout": "1",
+              "stderr": ""
+            }
+          },
+          "accepted": true,
+          "repair_steps": [
+            "expanded simple compound assignment *="
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The programs are generated with fixed constants; behavior comparison uses empty stdin.",
+    "Each program receives one deterministic generation in this run.",
+    "Category transformation checks are lexical proxies inferred from positive.c, not AST proofs.",
+    "All selected candidates in this run were raw Qwen outputs; no repaired candidate was selected."
+  ],
+  "selected_candidate_counts": {
+    "raw": 24
+  }
+}
