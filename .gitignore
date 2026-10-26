@@ -48,3 +48,9 @@ results/generator_a_v6_rtx/
 results/generator_a_v7_rtx/
 results/*_tmp/
 
+
+# Day 12-15 Temp Outputs
+results/controller_tmp/
+results/day13_test_report.json
+reports/
+
